@@ -10,7 +10,7 @@ const Navbar = () => {
     const toggleMenu = () => setNav(!nav)
 
     return(
-        <div className="h-[80px] bg-slate-100 absolute flex w-[100vw] text-slate-800 z-50 drop-shadow-lg justify-between">
+        <div className="h-[80px] bg-slate-100 relative flex w-[100vw] text-slate-800 z-50 drop-shadow-lg justify-between">
           <ul className="flex w-full justify-between items-center">
             <li className="pl-8 text-primary-green border-0 rounded-full" onClick={ toggleMenu }>
               {!nav ? <GiHamburgerMenu size={40}/> : <HiOutlineX size={40}/>}
@@ -30,7 +30,7 @@ const Navbar = () => {
 
           <ul className={!nav ? 'hidden' : "absolute z-20 mt-[80px] bg-slate-100 text-2xl border-0 rounded-br-2xl text-center text-primary-green min-w-[12%]"}>
                 <li className="p-2 border-2 border-primary-green"><Link href='/Home'>Home</Link></li>
-                <li className="p-2 border-2 border-primary-green"><Link href='/'>Counselors</Link></li>
+                <li className="p-2 border-2 border-primary-green"><Link href='/Counselors'>Counselors</Link></li>
                 <li className="p-2 border-2 border-primary-green">Services</li>
                 <li className="p-2 border-2 border-primary-green">Booking</li>
                 <li className="p-2 border-2 border-primary-green">Blog</li>
