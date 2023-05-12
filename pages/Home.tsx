@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
-import { Link } from "react-router-dom"
+import Link from 'next/link';
 
 const HomePage = () => {
     return (
