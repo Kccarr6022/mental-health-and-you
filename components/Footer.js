@@ -1,5 +1,7 @@
 import React from "react"
 import { BsFacebook } from "react-icons/bs"
+import { Link } from "react-router-dom"
+
 
 const Footer = () => {
     return (
@@ -7,45 +9,45 @@ const Footer = () => {
             <div className="inline">
                 <ul className="items-center text-xl">
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <a href="/">Home</a>
+                        <Link to="/">Home</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <a href="/">Counselors</a>
+                        <Link to="/">Counselors</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <a href="/">Services</a>
+                        <Link to="/">Services</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <a href="/">Blog</a>
+                        <Link to="/">Blog</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <a href="/">Booking</a>
+                        <Link to="/">Booking</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <a href="/">About</a>
+                        <Link to="/">About</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <a href="/">FAQ</a>
+                        <Link to="/">FAQ</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <a href="/">Contact</a>
+                        <Link to="/">Contact</Link>
                     </li>
                 </ul>
                 <div className="float-right">
                     <ul>
                         <li>
-                            <a href="/">
+                            <Link href="/">
                                 <BsFacebook />
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="/"></a>
+                            <Link href="/"></Link>
                         </li>
                         <li>
-                            <a href="/"></a>
+                            <Link href="/"></Link>
                         </li>
                         <li>
-                            <a href="/"></a>
+                            <Link href="/"></Link>
                         </li>
                     </ul>
                 </div>

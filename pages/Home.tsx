@@ -2,6 +2,7 @@ import React from "react"
 import Image from "next/image"
 import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
+import { Link } from "react-router-dom"
 
 const HomePage = () => {
     return (
@@ -27,7 +28,7 @@ const HomePage = () => {
                             }}
                             className="z-50 rounded-3xl border-2 sm:text-2xl md:text-3xl lg:text-4xl font-semibold sm:mt-1 md:mt-3 lg:mt-5  sm:p-4 md:p-6 lg:p-8 hover:bg-primary-green hover:bg-primary-white"
                         >
-                            <a href="/learnmore">Learn More</a>
+                            <Link to="/learnmore">Learn More</Link>
                         </button>
                     </div>
                 </div>
@@ -47,7 +48,7 @@ const HomePage = () => {
                             <span className="font-bold">you’re in the right place!</span>
                         </p>
                         <button className="rounded-full mx-auto border-2 text-2xl w-80 font-bold mt-5 p-4 group-hover:stroke-white block">
-                            <a href="/appointment">Book an Appointment</a>
+                            <Link to="/appointment">Book an Appointment</Link>
                         </button>
                     </div>
                 </div>
@@ -75,7 +76,7 @@ const HomePage = () => {
                         <span className="font-bold">chat tab function</span> at the bottom right of the page!
                     </p>
                     <button className="rounded-full mx-auto border-2 text-2xl w-80 font-bold mt-5 p-4 group-hover:stroke-white block">
-                        <a href="/contact">Contact Us</a>
+                        <Link to="/contact">Contact Us</Link>
                     </button>
                 </div>
             </section>
@@ -92,7 +93,7 @@ const HomePage = () => {
                         program that gave him the opportunity to create Mental Health & You.
                     </p>
                     <button className="rounded-full mx-auto border-2 text-2xl w-80 font-bold mt-5 p-4 group-hover:stroke-white block">
-                        <a href="/about">Learn More</a>
+                        <Link to="/about">Learn More</Link>
                     </button>
                 </div>
                 <div className="w-1/2">
