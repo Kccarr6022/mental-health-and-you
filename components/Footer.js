@@ -8,28 +8,28 @@ const Footer = () => {
             <div className="inline">
                 <ul className="items-center text-xl">
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <Link to="/">Home</Link>
+                        <Link href="/">Home</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <Link to="/">Counselors</Link>
+                        <Link href="/">Counselors</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <Link to="/">Services</Link>
+                        <Link href="/">Services</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <Link to="/">Blog</Link>
+                        <Link href="/">Blog</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <Link to="/">Booking</Link>
+                        <Link href="/">Booking</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <Link to="/">About</Link>
+                        <Link href="/">About</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <Link to="/">FAQ</Link>
+                        <Link href="/">FAQ</Link>
                     </li>
                     <li className="text-footer-text-green inline mx-5 cursor-pointer">
-                        <Link to="/">Contact</Link>
+                        <Link href="/">Contact</Link>
                     </li>
                 </ul>
                 <div className="float-right">
