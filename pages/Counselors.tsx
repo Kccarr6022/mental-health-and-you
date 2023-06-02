@@ -2,6 +2,7 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/NavBar"
 import Image from "next/image"
 import person3 from "../public/person3.png"
+import ClientDescription from "@/components/ClientDescription"
 
 const Counselors = () => {
     return (
@@ -71,62 +72,11 @@ const Counselors = () => {
                         <hr className="border-2 border-secondary-green min-w-[40%]"></hr>
                         <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green"/>
                     </span>
-                    <div className="hidden md:inline-block h-[full] min-h-[1em] min-w-[4px] self-stretch bg-secondary-green rounded-sm"></div>
+                    <div className="hidden md:inline-block h-[full] min-h-[1em] min-w-[4px] self-stretch bg-secondary-green rounded-sm ml-[1px]"></div>
                     <div className="flex flex-col items-center mt-8">
-                        <div className='flex flex-col text-slate-100 border-4 border-secondary-green rounded-xl p-6 md:max-w-[75%]'>
-                            <span className="font-bold">FirstName LastName</span>
-                            <div>
-                                <span className="font-bold">Age: </span>
-                                (age)
-                            </div>
-                            <div>
-                                <span className="font-bold">Gender </span>
-                                (Gender)
-                            </div>
-                            <div>
-                                <span className="font-bold">Brief Description: </span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </div>
-                        </div>
-                        <div className="flex justify-center bg-secondary-green text-slate-100 py-2 px-4 rounded-b-lg">VIEW PROFILE</div>
-                        <div className='flex flex-col text-slate-100 border-4 border-secondary-green rounded-xl p-6 md:max-w-[75%] mt-8'>
-                            <span className="font-bold">FirstName LastName</span>
-                            <div>
-                                <span className="font-bold">Age: </span>
-                                (age)
-                            </div>
-                            <div>
-                                <span className="font-bold">Gender </span>
-                                (Gender)
-                            </div>
-                            <div>
-                                <span className="font-bold">Brief Description: </span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </div>
-                        </div>
-                        <div className="flex justify-center bg-secondary-green text-slate-100 py-2 px-4 rounded-b-lg">VIEW PROFILE</div>
-
-                        <div className='flex flex-col text-white border-4 border-secondary-green rounded-xl p-6 md:max-w-[75%] mt-8'>
-                            <span className="font-bold">FirstName LastName</span>
-                            <div>
-                                <span className="font-bold">Age: </span>
-                                (age)
-                            </div>
-                            <div>
-                                <span className="font-bold">Gender </span>
-                                (Gender)
-                            </div>
-                            <div>
-                                <span className="font-bold">Brief Description: </span>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </div>
-                            
-                        </div>
-                        <div className="flex justify-center bg-secondary-green text-slate-100 py-2 px-4 rounded-b-lg">VIEW PROFILE</div>
-
+                        <ClientDescription />
+                        <ClientDescription />
+                        <ClientDescription />
                     </div>
                     
                 </div>
