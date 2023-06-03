@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 function ClientDescription() {
   return (
@@ -19,7 +20,7 @@ function ClientDescription() {
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         </div>
     </div>
-    <div className="flex justify-center bg-secondary-green text-slate-100 py-2 px-4 rounded-b-lg mb-4">VIEW PROFILE</div>
+    <div className="flex justify-center bg-secondary-green text-slate-100 py-2 px-4 rounded-b-lg mb-4"><Link href='/Client'>VIEW PROFILE</Link></div>
     </>
   )
 }
