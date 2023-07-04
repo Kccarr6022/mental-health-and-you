@@ -1,11 +1,11 @@
 import React from "react";
-import { BsFacebook } from "react-icons/bs";
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Link from "next/link";
 
 const Footer = () => {
   return (
     <div className="bg-footer-background-green md:h-32 md:flex flex-col justify-evenly p-6 md:p-0">
-      <div className="md:inline hidden">
+      <div className="md:flex hidden justify-between">
         <ul className="md:flex text-xl mx-[10%] gap-16 pl-6">
           <li className="text-footer-text-green cursor-pointer">
             <Link href="/">Home</Link>
@@ -30,6 +30,20 @@ const Footer = () => {
           </li>
           <li className="text-footer-text-green cursor-pointer">
             <Link href="/">Contact</Link>
+          </li>
+        </ul>
+        <ul className="md:flex mr-[11%] gap-x-6">
+          <li>
+            <FaFacebook size={35} color="#6B9D95"/>
+          </li>
+          <li>
+            <FaTwitter size={35} color="#6B9D95"/>
+          </li>
+          <li>
+            <FaInstagram size={35} color="#6B9D95"/>
+          </li>
+          <li>
+            <FaLinkedin size={35} color="#6B9D95"/>
           </li>
         </ul>
       </div>
