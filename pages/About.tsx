@@ -2,6 +2,7 @@ import HoroAccentLine from '@/components/HoroAccentLine'
 import Image from 'next/image'
 import Navbar from '@/components/NavBar'
 import person3 from '../public/person3.png'
+import person4 from '../public/person4.png'
 import React from 'react'
 import Footer from '@/components/Footer'
 
@@ -99,7 +100,7 @@ function About() {
             </div>
             <div className='md:flex justify-evenly w-full my-10'>
                 <Image 
-                    src={person3}
+                    src={person4}
                     alt=''
                     height={800}
                     width={400}

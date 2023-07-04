@@ -13,6 +13,15 @@ module.exports = {
       fontFamily: {
         lexend: ["Lexend Deca"],
       },
+      keyframes: {
+        fadeDown: {
+          '0%': { opacity: '0', transform: 'translateY(-1rem)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+      },
+      animation: {
+        fadeDown: 'fadeDown .5s ease-out',
+      },
       colors: {
         transparent: "transparent",
         "green-transparent": "rgba(42,124,111, 0.7)",
@@ -30,11 +39,20 @@ module.exports = {
       boxShadow: {
         main: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
       },
+      textShadow: {
+        glow: '0 0 10px #5EC7B6, 0 0 20px #5EC7B6, 0 0 30px #5EC7B6, 0 0 40px #5EC7B6',
+      },
       backgroundImage: {
         "quote-background": "url('/src/images/quote-background.jpg')",
       },
+      variants: {
+        extend: {
+          animation: ['hover'],
+          textShadow: ['hover'],
+        },
+      }
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-textshadow')],
 }
 
