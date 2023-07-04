@@ -93,7 +93,7 @@ const HomePage = () => {
             </section>
 
             {/* Here is the about us section */}
-            <section className="md:flex text-primary-white bg-primary-green p-10 h-2/3">
+            <section className="md:flex text-primary-white bg-primary-green p-20 h-2/3 ml-[5%]">
                 <div className="md:w-1/2">
                     <h2 className="text-5xl flex justify-center md:justify-start my-6">About Us</h2>
                     <p className="home-text leading-12 text-2xl mt-2 mb-10">
@@ -107,7 +107,7 @@ const HomePage = () => {
                         <Link href="/about">Learn More</Link>
                     </button>
                 </div>
-                <div className="rounded-xl border-0 overflow-hidden m-8 md:m-0">
+                <div className="rounded-xl border-0 overflow-hidden m-8 md:m-0 pl-20">
                     <Image 
                         src="/person3.png"
                         width={550}
