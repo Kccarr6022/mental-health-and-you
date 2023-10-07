@@ -76,7 +76,6 @@ const Navbar = () => {
           <li className="pl-14 text-primary-green border-0 rounded-full">
             <Image src={"/logo.png"} height={80} width={80} alt="" />
           </li>
-          
         </ul>
 
         <ul className="flex w-full items-center gap-10 justify-end mr-6 text-xl">
@@ -86,13 +85,21 @@ const Navbar = () => {
           <li className="hover:text-shadow-glow transition-all duration-300">
             <Link href="/Counselors">Counselors</Link>
           </li>
-          <li className="hover:text-shadow-glow transition-all duration-300">Services</li>
-          <li className="hover:text-shadow-glow transition-all duration-300">Booking</li>
-          <li className="hover:text-shadow-glow transition-all duration-300">Blog</li>
+          <li className="hover:text-shadow-glow transition-all duration-300">
+            Services
+          </li>
+          <li className="hover:text-shadow-glow transition-all duration-300">
+            Booking
+          </li>
+          <li className="hover:text-shadow-glow transition-all duration-300">
+            Blog
+          </li>
           <li className="hover:text-shadow-glow transition-all duration-300">
             <Link href="/About">About</Link>
           </li>
-          <li className="hover:text-shadow-glow transition-all duration-300">FAQ</li>
+          <li className="hover:text-shadow-glow transition-all duration-300">
+            <Link href="/faq">FAQ</Link>
+          </li>
           <li className="hover:text-shadow-glow transition-all duration-300">
             Contact
           </li>

@@ -1,26 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-      "./app/**/*.{js,ts,jsx,tsx}",
-      "./pages/**/*.{js,ts,jsx,tsx}",
-      "./components/**/*.{js,ts,jsx,tsx}",
-  
-      // Or if using `src` directory:
-      "./src/**/*.{js,ts,jsx,tsx}",
-    ],
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       fontFamily: {
-        lexend: ["Lexend Deca"],
+        lexend: ["Lexend"],
+        lexendDeca: ["Lexend Deca"],
       },
       keyframes: {
         fadeDown: {
-          '0%': { opacity: '0', transform: 'translateY(-1rem)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+          "0%": { opacity: "0", transform: "translateY(-1rem)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
-        fadeDown: 'fadeDown .5s ease-out',
+        fadeDown: "fadeDown .5s ease-out",
       },
       colors: {
         transparent: "transparent",
@@ -40,19 +41,18 @@ module.exports = {
         main: "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
       },
       textShadow: {
-        glow: '0 0 10px #5EC7B6, 0 0 20px #5EC7B6, 0 0 30px #5EC7B6, 0 0 40px #5EC7B6',
+        glow: "0 0 10px #5EC7B6, 0 0 20px #5EC7B6, 0 0 30px #5EC7B6, 0 0 40px #5EC7B6",
       },
       backgroundImage: {
         "quote-background": "url('/src/images/quote-background.jpg')",
       },
       variants: {
         extend: {
-          animation: ['hover'],
-          textShadow: ['hover'],
+          animation: ["hover"],
+          textShadow: ["hover"],
         },
-      }
+      },
     },
   },
-  plugins: [require('tailwindcss-textshadow')],
-}
-
+  plugins: [require("tailwindcss-textshadow")],
+};
