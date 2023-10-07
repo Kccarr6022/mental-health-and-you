@@ -51,7 +51,7 @@ const FAQ = () => {
     {
       question: "How much will it cost?",
       answer:
-        "Mental Health and You will be a 250$ payment every month, which will grant you unlimited texting with your therapist, one monthly counseling session, and access to additional mental health resources.",
+        "Mental Health and You will be a 249.99$ payment every month, which will grant you unlimited texting with your therapist, one monthly counseling session, and access to additional mental health resources.",
       expand: false,
     },
     {
