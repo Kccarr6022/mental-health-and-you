@@ -52,6 +52,11 @@ module.exports = {
           textShadow: ["hover"],
         },
       },
+      screens: {
+        sm: "800px",
+        md: "960px",
+        lg: "1440px",
+      },
     },
   },
   plugins: [require("tailwindcss-textshadow")],

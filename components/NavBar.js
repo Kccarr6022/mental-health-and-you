@@ -71,14 +71,23 @@ const Navbar = () => {
 
   const DesktopNav = () => {
     return (
-      <div className="h-[100px] bg-slate-100 relative flex w-[100vw] text-primary-green z-50 drop-shadow-lg justify-between ">
-        <ul className="flex w-full justify-between items-center">
-          <li className="pl-14 text-primary-green border-0 rounded-full">
-            <Image src={"/logo.png"} height={80} width={80} alt="" />
+      <div className="h-[100px] bg-slate-100 relative flex w-[100vw] text-primary-green z-50 drop-shadow-lg justify-between overflow-hidden">
+        <ul className="flex w-full items-center">
+          <li className="pl-14 text-primary-green border-0">
+            <Image
+              src={"/logo.png"}
+              height={80}
+              width={80}
+              alt=""
+              className=""
+            />
+          </li>
+          <li className="ml-4 font-bold text-primary-green text-left">
+            <h1 className="md:text-l lg:text-2xl">Mental Health & You</h1>
           </li>
         </ul>
 
-        <ul className="flex w-full items-center gap-10 justify-end mr-6 text-xl">
+        <ul className="flex w-full items-center gap-10 justify-end mr-6 text-xl z-10">
           <li className="hover:text-shadow-glow transition-all duration-300">
             <Link href="/Home">Home</Link>
           </li>
