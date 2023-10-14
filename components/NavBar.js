@@ -60,7 +60,9 @@ const Navbar = () => {
           <li className="p-2 border-2 border-primary-green">Booking</li>
           <li className="p-2 border-2 border-primary-green">Blog</li>
           <li className="p-2 border-2 border-primary-green">About</li>
-          <li className="p-2 border-2 border-primary-green">FAQ</li>
+          <li className="p-2 border-2 border-primary-green">
+            <Link href="/faq">FAQ</Link>
+          </li>
           <li className="p-2 border-2 rounded-br-2xl border-primary-green">
             Contact
           </li>
