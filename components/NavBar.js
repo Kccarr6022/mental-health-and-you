@@ -67,7 +67,7 @@ const Navbar = () => {
             <Link href="/faq">FAQ</Link>
           </li>
           <li className="p-2 border-2 rounded-br-2xl border-primary-green">
-            Contact
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
       </div>
@@ -115,7 +115,7 @@ const Navbar = () => {
             <Link href="/faq">FAQ</Link>
           </li>
           <li className="hover:text-shadow-glow transition-all duration-300">
-            Contact
+            <Link href="/contact">Contact</Link>
           </li>
           <li className="px-4 font-bold text-primary-green text-center border-4 border-primary-green rounded-xl py-4 hover:bg-primary-green hover:text-slate-100 transition-all duration-200">
             <Link href="/SignUp">Sign Up</Link>
