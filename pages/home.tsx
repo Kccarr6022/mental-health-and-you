@@ -15,7 +15,7 @@ const HomePage = () => {
           <Image src="/person.png" width={1250} height={1250} alt="" />
         </div>
         <span className="md:absolute top-0 w-1/2 bottom-0 bg-gradient-to-r from-transparent via-transparent to-primary-green pointer-events-none"></span>
-        <div className="md:absolute md:flex top-0 right-0 sm:w-full md:w-1/2 bottom-0 text-center justify-center items-center bg-primary-green text-primary-white my-auto ">
+        <div className="md:absolute md:flex top-0 right-0 sm:w-full md:w-1/2 bottom-0 text-center justify-center items-center bg-primary-green text-primary-white my-auto">
           <div className="">
             <h1 className="text-6xl font-bold">Mental Health & You</h1>
             <p className="home-text max-w-[50%] mx-auto py-5 text-2xl">
@@ -25,9 +25,14 @@ const HomePage = () => {
             <p className="text-2xl mt-6">
               Specializations in anxiety, trauma, depression, and more.
             </p>
-            <button className="z-50 rounded-3xl border-2 text-3xl font-semibold p-6 hover:bg-secondary-green hover:border-primary-green transition-all duration-200 mt-6">
-              <Link href="/learnmore">Learn More</Link>
-            </button>
+            <div className="grid grid-flow-col grid-cols-1 sm:grid-cols-2 gap-2 mt-6 w-1/2 mx-auto">
+              <button className="rounded-3xl border-2 font-semibold p-6 hover:bg-secondary-green hover:border-primary-green transition-all duration-200">
+                <Link href="/about">Learn More</Link>
+              </button>
+              <button className="rounded-3xl border-2 font-semibold p-6 hover:bg-secondary-green hover:border-primary-green transition-all duration-200">
+                <Link href="/preassessment">Get Started</Link>
+              </button>
+            </div>
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Navbar = () => {
+  // TODO" 800 px adjustment for mobile
   const [nav, setNav] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const toggleMenu = () => setNav(!nav);
@@ -39,7 +40,7 @@ const Navbar = () => {
             <Image src={"/logo.png"} height={80} width={80} alt="" />
           </li>
           <li className="pr-8 font-bold text-primary-green text-2xl">
-            <Link href="/SignUp">Sign Up</Link>
+            <Link href="/preassessment">Sign Up</Link>
           </li>
         </ul>
 
@@ -51,7 +52,7 @@ const Navbar = () => {
           }
         >
           <li className="border-2 border-primary-green p-2">
-            <Link href="/Home">Home</Link>
+            <Link href="/home">Home</Link>
           </li>
           <li className="border-2 border-primary-green p-2">
             <Link href="/Counselors">Counselors</Link>
@@ -94,7 +95,7 @@ const Navbar = () => {
 
         <ul className="flex w-full items-center gap-10 justify-end mr-6 text-xl z-10">
           <li className="hover:text-shadow-glow transition-all duration-300">
-            <Link href="/Home">Home</Link>
+            <Link href="/home">Home</Link>
           </li>
           <li className="hover:text-shadow-glow transition-all duration-300">
             <Link href="/Counselors">Counselors</Link>
@@ -109,7 +110,7 @@ const Navbar = () => {
             Blog
           </li>
           <li className="hover:text-shadow-glow transition-all duration-300">
-            <Link href="/About">About</Link>
+            <Link href="/about">About</Link>
           </li>
           <li className="hover:text-shadow-glow transition-all duration-300">
             <Link href="/faq">FAQ</Link>
@@ -118,7 +119,7 @@ const Navbar = () => {
             <Link href="/contact">Contact</Link>
           </li>
           <li className="px-4 font-bold text-primary-green text-center border-4 border-primary-green rounded-xl py-4 hover:bg-primary-green hover:text-slate-100 transition-all duration-200">
-            <Link href="/SignUp">Sign Up</Link>
+            <Link href="/preassessment">Sign Up</Link>
           </li>
         </ul>
       </div>

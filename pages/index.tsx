@@ -1,9 +1,9 @@
-import Home from "./Home";
+import HomePage from "./home";
 
 export default function index() {
   return (
     <>
-      <Home />
+      <HomePage />
     </>
   );
 }

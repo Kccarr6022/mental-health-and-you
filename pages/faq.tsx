@@ -71,8 +71,8 @@ const FAQ = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-primary-green text-primary-white w-full text-center h-[90vh]">
-        <h1 className="pt-20 pb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-[75%] mx-auto">
+      <div className="bg-primary-green text-primary-white w-full text-center min-h-[90vh] h-fit py-10">
+        <h1 className="pt-4 pb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-[75%] mx-auto">
           Frequently Asked Questions
         </h1>
         <div className="relative">
@@ -84,7 +84,7 @@ const FAQ = () => {
           {faq.map((item, index) => (
             <div
               key={index}
-              className="border-y-[1.5px] border-[#5EC7B6] text-left relative my-1"
+              className="border-y-[1.5px] border-[#5EC7B6] text-left relative my-4"
             >
               <h2 className="text-2xl font-bold">{item.question}</h2>
               {item.expand ? (
@@ -95,7 +95,7 @@ const FAQ = () => {
                     onClick={() => handleFaqExpand(index)}
                     className="flex items-center text-primary-white absolute transform -translate-y-1/2  top-4 right-0"
                   />
-                  <p className="text-lg">{item.answer}</p>
+                  <p className="text-lg whitespace-pre-line">{item.answer}</p>
                 </>
               ) : (
                 <BiRightArrow
