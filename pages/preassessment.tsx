@@ -163,10 +163,20 @@ const PreAssessment = () => {
       datbaseAlias: "SleepingHabits",
       answer: null,
     },
+    {
+      questionType: "informative",
+      question: "Why are you considering therapy today?",
+      answers: [
+        "I have been feeling depressed",
+        "I have been feeling anxious or overwhelmed",
+        "My mood has been interfering with my life",
+        "Poor",
+      ],
+      datbaseAlias: "Stress",
+      answer: null,
+    },
   ]);
   const [offset, setOffset] = useState(0);
-  console.log(survey.length);
-  console.log(offset);
   return (
     <>
       <Navbar />
@@ -193,7 +203,10 @@ const PreAssessment = () => {
                   {question.questionType === "multipleChoice" ? (
                     <div className="flex flex-col w-full mx-auto">
                       {question.answers.map((answer, answerIndex) => (
-                        <div className="flex questions-center">
+                        <div
+                          className="flex questions-center"
+                          key={answerIndex}
+                        >
                           <button
                             name={question.datbaseAlias}
                             value={answer}
@@ -202,7 +215,6 @@ const PreAssessment = () => {
                               newSurvey[offset + questionIndex].answer =
                                 e.target.value;
                               setSurvey(newSurvey);
-                              console.log(survey);
                             }}
                             style={
                               question.answer === answer
@@ -229,6 +241,7 @@ const PreAssessment = () => {
                           e.target.value;
                         setSurvey(newSurvey);
                       }}
+                      key={questionIndex}
                     />
                   )}
                 </div>
@@ -271,10 +284,7 @@ const PreAssessment = () => {
             <br />
             <button
               className="bg-secondary-green rounded-xl w-3/5 mx-auto h-fit text-2xl p-4 mb-4 md:w-2/5 lg:w-1/5 hover:bg-primary-white hover:text-[#23655A]"
-              onClick={() => {
-                console.log(survey);
-                console.log("submitting...");
-              }}
+              onClick={() => {}}
             >
               Submit
             </button>
