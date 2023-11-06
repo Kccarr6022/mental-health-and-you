@@ -1,8 +1,8 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 const PreAssessment = () => {
-  const [survey, setSurvey] = useState<Question[]>([
+  const [survey, setSurvey] = useState<SurveyQuestion[]>([
     {
       questionType: "multipleChoice",
       question: "What kind of therapy experience are you looking for?",
@@ -210,10 +210,10 @@ const PreAssessment = () => {
                           <button
                             name={question.databaseAlias}
                             value={answer}
-                            onClick={(e) => {
+                            onClick={(e: MouseEvent<HTMLButtonElement>) => {
                               const newSurvey = [...survey];
                               newSurvey[offset + questionIndex].answer =
-                                e.target.value;
+                                e.currentTarget.value;
                               setSurvey(newSurvey);
                             }}
                             style={
@@ -296,7 +296,7 @@ const PreAssessment = () => {
   );
 };
 
-interface Question {
+interface SurveyQuestion {
   questionType: string;
   question: string;
   answers: string[];
