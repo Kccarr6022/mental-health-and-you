@@ -2,19 +2,19 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
 import { useState } from "react";
 const PreAssessment = () => {
-  const [survey, setSurvey] = useState([
+  const [survey, setSurvey] = useState<Question[]>([
     {
       questionType: "multipleChoice",
       question: "What kind of therapy experience are you looking for?",
       answers: ["One-on-one", "Couples", "Families", "Teens/ Adolescents"],
-      datbaseAlias: "TherapyType",
+      databaseAlias: "TherapyType",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "Have you been to therapy before?",
       answers: ["Yes", "No"],
-      datbaseAlias: "PreviousTherapy",
+      databaseAlias: "PreviousTherapy",
       answer: null,
     },
     {
@@ -26,7 +26,7 @@ const PreAssessment = () => {
         "Not sure yet",
         "Both are good",
       ],
-      datbaseAlias: "PreferredCommunication",
+      databaseAlias: "PreferredCommunication",
       answer: null,
     },
     {
@@ -41,14 +41,14 @@ const PreAssessment = () => {
         "Transmasculine",
         "Agender",
       ],
-      datbaseAlias: "TherapistGender",
+      databaseAlias: "TherapistGender",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "Are you experiencing depression?",
       answers: ["Yes", "No"],
-      datbaseAlias: "Depression",
+      databaseAlias: "Depression",
       answer: null,
     },
     {
@@ -62,21 +62,21 @@ const PreAssessment = () => {
         "Over a year ago",
         "Never",
       ],
-      datbaseAlias: "SuicidalThoughts",
+      databaseAlias: "SuicidalThoughts",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "Do you consider yourself religious?",
       answers: ["Yes", "No"],
-      datbaseAlias: "Religious",
+      databaseAlias: "Religious",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "Do you consider yourself spiritual?",
       answers: ["Yes", "No"],
-      datbaseAlias: "Spiritual",
+      databaseAlias: "Spiritual",
       answer: null,
     },
     {
@@ -93,7 +93,7 @@ const PreAssessment = () => {
         "Prefer not to say",
         "Other",
       ],
-      datbaseAlias: "GenderIdentity",
+      databaseAlias: "GenderIdentity",
       answer: null,
     },
     {
@@ -111,7 +111,7 @@ const PreAssessment = () => {
         "Prefer not to say",
         "Other",
       ],
-      datbaseAlias: "Sexuality",
+      databaseAlias: "Sexuality",
       answer: null,
     },
     {
@@ -125,42 +125,42 @@ const PreAssessment = () => {
         "Widowed",
         "Other",
       ],
-      datbaseAlias: "RelationshipStatus",
+      databaseAlias: "RelationshipStatus",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "How would you rate your physical health?",
       answers: ["Excellent", "Good", "Fair", "Poor"],
-      datbaseAlias: "PhysicalHealth",
+      databaseAlias: "PhysicalHealth",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "How would you rate your eating habits?",
       answers: ["Excellent", "Good", "Fair", "Poor"],
-      datbaseAlias: "EatingHabits",
+      databaseAlias: "EatingHabits",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "How often do you drink alcohol?",
       answers: ["Never", "Infrequently", "Monthly", "Weekly", "Daily"],
-      datbaseAlias: "Alcohol",
+      databaseAlias: "Alcohol",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "Do you take any current medication?",
       answers: ["Yes", "No"],
-      datbaseAlias: "Medication",
+      databaseAlias: "Medication",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "How would you rate your sleeping habits?",
       answers: ["Excellent", "Good", "Fair", "Poor"],
-      datbaseAlias: "SleepingHabits",
+      databaseAlias: "SleepingHabits",
       answer: null,
     },
     {
@@ -172,7 +172,7 @@ const PreAssessment = () => {
         "My mood has been interfering with my life",
         "Poor",
       ],
-      datbaseAlias: "Stress",
+      databaseAlias: "Stress",
       answer: null,
     },
   ]);
@@ -208,7 +208,7 @@ const PreAssessment = () => {
                           key={answerIndex}
                         >
                           <button
-                            name={question.datbaseAlias}
+                            name={question.databaseAlias}
                             value={answer}
                             onClick={(e) => {
                               const newSurvey = [...survey];
@@ -234,7 +234,7 @@ const PreAssessment = () => {
                   ) : (
                     <input
                       type="text"
-                      name={question.datbaseAlias}
+                      name={question.databaseAlias}
                       onChange={(e) => {
                         const newSurvey = [...survey];
                         newSurvey[offset + questionIndex].answer =
@@ -295,5 +295,13 @@ const PreAssessment = () => {
     </>
   );
 };
+
+interface Question {
+  questionType: string;
+  question: string;
+  answers: string[];
+  databaseAlias: string;
+  answer: string | null;
+}
 
 export default PreAssessment;
