@@ -1,55 +1,78 @@
 import React from "react";
 import NavBar from "../components/NavBar";
+import Footer from "@/components/Footer";
 
 const SignUp = () => {
   return (
-    <div className="relative">
+    <>
       <NavBar />
-      <section className="pt-36 font-lexend bg-primary-green text-primary-white">
-        <h1 className="text-center text-6xl mt-24 mb-10">Account Creation</h1>
-        <hr className="w-3/4 mx-auto" />
-        <h2 className="text-center text-4xl mt-10 mb-2">
+      <section className="bg-primary-green min-h-[100vh] text-primary-white text-center pb-20">
+        <h1 className="pt-10 pb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-[75%] mx-auto">
+          Account Creation
+        </h1>
+        <div className="relative">
+          <div className="circle-left w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 left-[10%] rounded-full"></div>
+          <hr className="border-2 md:border-4 lg:border-8 border-[#5EC7B6] w-[80%] mx-auto" />
+          <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
+        </div>
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-6 font-semibold">
           A little more about you
         </h2>
-        <div className="w-full md:w-1/2 py-5 bg-primary-green rounded-2xl border-[6px] border-secondary-green mx-auto text-[#A3A3A3]">
-          <h4 className="text-2xl ml-5">Full Name</h4>
+        <div className="border-solid border-4 w-4/5 mx-auto border-secondary-green rounded-xl mt-2 p-4 text-gray-800 grid-cols-1 grid sm:grid-cols-4 sm:gap-4 md:w-3/5 lg:w-2/4">
           <input
-            className="w-4/5 md:w-2/5 my-5 h-10 rounded-lg border-2 pl-2 bg-textbox-white mx-5"
-            placeholder="First"
+            className="border-2 border-secondary-green rounded-md w-full h-10 mb-4 mx-auto pl-2 sm:col-span-2 sm:w-full"
+            type="text"
+            placeholder="First Name"
           />
           <input
-            className="w-4/5 md:w-2/5 my-5 h-10 rounded-lg border-2 pl-2 bg-textbox-white mx-5"
-            placeholder="Last"
+            className="border-2 border-secondary-green rounded-md w-full h-10 mb-4 mx-auto pl-2 sm:col-span-2 sm:w-full"
+            type="text"
+            placeholder="Last Name"
           />
-          <h4 className="text-2xl ml-5">Contact</h4>
           <input
-            className="w-4/5 md:w-2/5 my-5 h-10 rounded-lg border-2 pl-2 bg-textbox-white mx-5"
+            className="border-2 border-secondary-green rounded-md w-full h-10 mb-4 mx-auto pl-2 sm:col-span-2 sm:w-full"
+            type="text"
             placeholder="Email"
           />
           <input
-            className="w-4/5 md:w-2/5 my-5 h-10 rounded-lg border-2 pl-2 bg-textbox-white mx-5"
+            className="border-2 border-secondary-green rounded-md w-full h-10 mb-4 mx-auto pl-2 sm:col-span-2 sm:w-full"
+            type="text"
             placeholder="Phone Number"
           />
-          {/* <label for="birthdate" className="text-2xl ml-5">
-            Birthdate
-          </label> */}
           <input
-            id="birthdate"
-            className="w-4/5 md:w-1/5 my-5 h-10 rounded-lg border-2 pl-2 bg-textbox-white mx-5"
-            placeholder="MM/DD/YYYY"
+            className="border-2 border-secondary-green rounded-md w-full h-10 mb-4 mx-auto pl-2 sm:w-full"
+            type="text"
+            placeholder="Birthday"
           />
           <input
-            id="gender"
-            className="w-4/5 md:w-1/5 my-5 h-10 rounded-lg border-2 pl-2 bg-textbox-white mx-5"
-            placeholder="Email"
+            className="border-2 border-secondary-green rounded-md w-full h-10 mb-4 mx-auto pl-2 sm:w-full"
+            type="text"
+            placeholder="Gender"
           />
           <input
-            className="w-4/5 md:w-2/5 my-5 h-10 rounded-lg border-2 pl-2 bg-textbox-white mx-5"
-            placeholder="Phone Number"
+            className="border-2 border-secondary-green rounded-md w-full h-10 mx-auto pl-2 sm:col-span-2 sm:w-full"
+            type="text"
+            placeholder="Nickname"
+          />
+        </div>
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-6 font-semibold">
+          Create a Password
+        </h2>
+        <div className="border-solid border-4 w-4/5 mx-auto border-secondary-green rounded-xl mt-2 p-4 text-gray-800 sm:w-2/5 md:w-1/3 lg:w-1/4">
+          <input
+            className="border-2 border-secondary-green rounded-md w-full h-10 mb-4 mx-auto pl-2"
+            type="text"
+            placeholder="Password"
+          />
+          <input
+            className="border-2 border-secondary-green rounded-md w-full h-10 mx-auto pl-2"
+            type="text"
+            placeholder="Confirm Password"
           />
         </div>
       </section>
-    </div>
+      <Footer />
+    </>
   );
 };
 

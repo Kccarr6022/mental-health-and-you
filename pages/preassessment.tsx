@@ -1,26 +1,29 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
-import { useState, MouseEvent } from "react";
+import Link from "next/link";
+import { useState, MouseEvent, ChangeEvent } from "react";
+import { useRouter } from "next/router";
 const PreAssessment = () => {
+  const router = useRouter();
   const [survey, setSurvey] = useState<SurveyQuestion[]>([
     {
       questionType: "multipleChoice",
       question: "What kind of therapy experience are you looking for?",
-      answers: ["One-on-one", "Couples", "Families", "Teens/ Adolescents"],
+      options: ["One-on-one", "Couples", "Families", "Teens/ Adolescents"],
       databaseAlias: "TherapyType",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "Have you been to therapy before?",
-      answers: ["Yes", "No"],
+      options: ["Yes", "No"],
       databaseAlias: "PreviousTherapy",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "Preferred method of communication?",
-      answers: [
+      options: [
         "Direct Messaging",
         "Phone or Video Sessions",
         "Not sure yet",
@@ -32,7 +35,7 @@ const PreAssessment = () => {
     {
       questionType: "multipleChoice",
       question: "Preferred gender of Therapist?",
-      answers: [
+      options: [
         "No Preference",
         "Male",
         "Female",
@@ -47,14 +50,14 @@ const PreAssessment = () => {
     {
       questionType: "multipleChoice",
       question: "Are you experiencing depression?",
-      answers: ["Yes", "No"],
+      options: ["Yes", "No"],
       databaseAlias: "Depression",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "When did you last think about suicide?",
-      answers: [
+      options: [
         "In the last 2 weeks",
         "Over 2 weeks ago",
         "Over a month ago",
@@ -68,21 +71,21 @@ const PreAssessment = () => {
     {
       questionType: "multipleChoice",
       question: "Do you consider yourself religious?",
-      answers: ["Yes", "No"],
+      options: ["Yes", "No"],
       databaseAlias: "Religious",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "Do you consider yourself spiritual?",
-      answers: ["Yes", "No"],
+      options: ["Yes", "No"],
       databaseAlias: "Spiritual",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "What Gender do you identify with?",
-      answers: [
+      options: [
         "Male",
         "Female",
         "Non-binary",
@@ -99,7 +102,7 @@ const PreAssessment = () => {
     {
       questionType: "multipleChoice",
       question: "What Sexuality do you identify with?",
-      answers: [
+      options: [
         "Straight",
         "Gay",
         "Lesbian",
@@ -117,7 +120,7 @@ const PreAssessment = () => {
     {
       questionType: "multipleChoice",
       question: "What is your relationship status?",
-      answers: [
+      options: [
         "Single",
         "In a Relationship",
         "Married",
@@ -131,52 +134,94 @@ const PreAssessment = () => {
     {
       questionType: "multipleChoice",
       question: "How would you rate your physical health?",
-      answers: ["Excellent", "Good", "Fair", "Poor"],
+      options: ["Excellent", "Good", "Fair", "Poor"],
       databaseAlias: "PhysicalHealth",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "How would you rate your eating habits?",
-      answers: ["Excellent", "Good", "Fair", "Poor"],
+      options: ["Excellent", "Good", "Fair", "Poor"],
       databaseAlias: "EatingHabits",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "How often do you drink alcohol?",
-      answers: ["Never", "Infrequently", "Monthly", "Weekly", "Daily"],
+      options: ["Never", "Infrequently", "Monthly", "Weekly", "Daily"],
       databaseAlias: "Alcohol",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "Do you take any current medication?",
-      answers: ["Yes", "No"],
+      options: ["Yes", "No"],
       databaseAlias: "Medication",
       answer: null,
     },
     {
       questionType: "multipleChoice",
       question: "How would you rate your sleeping habits?",
-      answers: ["Excellent", "Good", "Fair", "Poor"],
+      options: ["Excellent", "Good", "Fair", "Poor"],
       databaseAlias: "SleepingHabits",
       answer: null,
     },
     {
       questionType: "informative",
       question: "Why are you considering therapy today?",
-      answers: [
+      options: [
         "I have been feeling depressed",
         "I have been feeling anxious or overwhelmed",
         "My mood has been interfering with my life",
-        "Poor",
+        "I have been struggling with relationships",
+        "I cannot find purpose and meaning in my life",
+        "I have been grieving",
+        "I have experienced trauma",
+        "I need to talk through an event in my life",
+        "I want to become more self confident",
+        "I seek to improve myself but do not know where to begin",
+        "I was recommended to seek therapy (friend, family member, or doctor)",
+        "Just exploring options",
+        "Other",
       ],
-      databaseAlias: "Stress",
+      databaseAlias: "ReasonForTherapy",
+      answer: [],
+    },
+    {
+      questionType: "informative",
+      question: "What are you expecting out of your therapist?",
+      options: [
+        "I expect them to listen",
+        "I want them to explore my past",
+        "I want to be taught new skills",
+        "I want them to challenge my beliefs",
+        "I expect to be assigned homework",
+        "I want them to guide me to set goals",
+        "I expect them to proactively check on me",
+        "I do no know what to expect",
+        "I have other expectations",
+      ],
+      databaseAlias: "TherapistExpectations",
+      answer: [],
+    },
+    {
+      questionType: "multipleChoice",
+      question: "How did you find out about Mental Health and You?",
+      options: [
+        "TV",
+        "Social Media",
+        "YouTube",
+        "Friend or Family",
+        "Web search",
+        "Email",
+        "Magzine/Newspaper",
+      ],
+      databaseAlias: "SleepingHabits",
       answer: null,
     },
   ]);
-  const [offset, setOffset] = useState(0);
+  const [questionOffset, setQuestionOffset] = useState(0);
+  const questionsPerPage = 4;
   return (
     <>
       <Navbar />
@@ -190,74 +235,132 @@ const PreAssessment = () => {
           <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
         </div>
         <div className="w-4/5 mx-auto mt-10 md:w-3/5 lg:w-2/5">
-          {offset < survey.length &&
-            survey.slice(offset, offset + 4).map((question, questionIndex) => (
-              <div
-                key={questionIndex}
-                className="text-center relative mt-8 border-[5px] rounded-xl border-secondary-green mx-auto h-fit"
-              >
-                <h2 className="text-2xl font-semibold mt-4">
-                  {question.question}
-                </h2>
-                <div className="flex questions-center my-4">
-                  {question.questionType === "multipleChoice" ? (
-                    <div className="flex flex-col w-full mx-auto">
-                      {question.answers.map((answer, answerIndex) => (
-                        <div
-                          className="flex questions-center"
-                          key={answerIndex}
-                        >
-                          <button
-                            name={question.databaseAlias}
-                            value={answer}
-                            onClick={(e: MouseEvent<HTMLButtonElement>) => {
-                              const newSurvey = [...survey];
-                              newSurvey[offset + questionIndex].answer =
-                                e.currentTarget.value;
-                              setSurvey(newSurvey);
-                            }}
-                            style={
-                              question.answer === answer
-                                ? {
-                                    backgroundColor: "#F0F0F0",
-                                    color: "#23655A",
-                                  }
-                                : {}
-                            }
-                            className="bg-secondary-green rounded-xl w-3/4 mx-auto my-2 p-2 text-2xl hover:bg-primary-white hover:text-[#23655A]"
+          {questionOffset < survey.length &&
+            survey
+              .slice(questionOffset, questionOffset + questionsPerPage)
+              .map((question, questionIndex) => (
+                <div
+                  key={questionIndex}
+                  className="text-center relative mt-8 border-[5px] rounded-xl border-secondary-green mx-auto h-fit"
+                >
+                  <h2 className="text-2xl font-semibold mt-4 mx-4">
+                    {question.question}
+                  </h2>
+                  <div className="flex questions-center my-4">
+                    {question.questionType === "multipleChoice" && (
+                      <div className="flex flex-col w-full mx-auto">
+                        {question.options.map((answer, answerIndex) => (
+                          <div
+                            className="flex questions-center"
+                            key={answerIndex}
                           >
-                            {answer}
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <input
-                      type="text"
-                      name={question.databaseAlias}
-                      onChange={(e) => {
-                        const newSurvey = [...survey];
-                        newSurvey[offset + questionIndex].answer =
-                          e.target.value;
-                        setSurvey(newSurvey);
-                      }}
-                      key={questionIndex}
-                    />
-                  )}
+                            <button
+                              name={question.databaseAlias}
+                              value={answer}
+                              onClick={(e: MouseEvent<HTMLButtonElement>) => {
+                                const newSurvey = [...survey];
+                                newSurvey[
+                                  questionOffset + questionIndex
+                                ].answer = e.currentTarget.value;
+                                setSurvey(newSurvey);
+                              }}
+                              style={
+                                question.answer === answer
+                                  ? {
+                                      backgroundColor: "#F0F0F0",
+                                      color: "#23655A",
+                                    }
+                                  : {}
+                              }
+                              className="bg-secondary-green rounded-xl w-3/4 mx-auto my-2 p-2 text-2xl hover:bg-primary-white hover:text-[#23655A]"
+                            >
+                              {answer}
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {question.questionType == "informative" && (
+                      <div key={questionIndex} className="w-5/6 mx-auto">
+                        <ul className="text-left text-xl leading-5 mx-auto w-full space-y-2">
+                          {question.options.map((answer, answerIndex) => (
+                            <li className="flex items-center" key={answerIndex}>
+                              <input
+                                id={answer}
+                                className="w-8 h-8 bg-primary-white border-2 border-secondary-green rounded-xl flex-grow-0 flex-shrink-0"
+                                type="checkbox"
+                                value={answer}
+                                name={question.databaseAlias}
+                                key={answerIndex}
+                                onChange={(
+                                  e: ChangeEvent<HTMLInputElement>
+                                ) => {
+                                  const newSurvey = [...survey];
+                                  let answers: string[] = newSurvey[
+                                    questionOffset + questionIndex
+                                  ].answer as string[];
+
+                                  if (e.target.checked) {
+                                    answers.push(e.target.value);
+                                  }
+                                  if (!e.target.checked) {
+                                    answers = answers.filter(
+                                      (answer) => answer !== e.target.value
+                                    );
+                                  }
+                                  newSurvey[
+                                    questionOffset + questionIndex
+                                  ].answer = answers;
+                                  setSurvey(newSurvey);
+                                }}
+                                checked={
+                                  (question.answer &&
+                                    question.answer.includes(answer)) ||
+                                  false
+                                }
+                              />
+                              <label
+                                htmlFor={answer}
+                                className="flex-grow ml-2"
+                              >
+                                {answer}
+                              </label>
+                            </li>
+                          ))}
+                        </ul>
+                        <textarea
+                          className="w-full mx-auto h-[450px] rounded-xl border-2 border-secondary-green p-4 text-base my-4 over text-primary-green focus:outline-none focus:ring-2 focus:ring-secondary-green focus:border-transparent"
+                          placeholder="Please elaborate on your answer here (optional)."
+                          name={question.databaseAlias}
+                          onChange={(e) => {
+                            const newSurvey = [...survey];
+                            let answers: string[] = newSurvey[
+                              questionOffset + questionIndex
+                            ].answer as string[];
+
+                            answers.push(e.target.value);
+                            newSurvey[questionOffset + questionIndex].answer =
+                              answers;
+                            setSurvey(newSurvey);
+                          }}
+                          key={questionIndex}
+                        />
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
         </div>
-        {offset > 0 && (
+        {questionOffset > 0 && (
           <>
             <br />
             <button
               className="bg-secondary-green rounded-xl w-3/5 mx-auto h-fit text-2xl p-4 mb-4 md:w-2/5 lg:w-1/5 hover:bg-primary-white hover:text-[#23655A]"
               onClick={() => {
-                if (offset === 0) {
+                if (questionOffset === 0) {
                   return;
                 }
-                setOffset(offset - 4);
+                setQuestionOffset(questionOffset - questionsPerPage);
                 window.scrollTo(0, 0);
               }}
             >
@@ -265,13 +368,13 @@ const PreAssessment = () => {
             </button>
           </>
         )}
-        {offset < survey.length - 4 && (
+        {questionOffset < survey.length - questionsPerPage && (
           <>
             <br />
             <button
               className="bg-secondary-green rounded-xl w-3/5 mx-auto h-fit text-2xl p-4 mb-4 md:w-2/5 lg:w-1/5 hover:bg-primary-white hover:text-[#23655A]"
               onClick={() => {
-                setOffset(offset + 4);
+                setQuestionOffset(questionOffset + questionsPerPage);
                 window.scrollTo(0, 0);
               }}
             >
@@ -279,12 +382,28 @@ const PreAssessment = () => {
             </button>
           </>
         )}
-        {offset == survey.length - 4 && (
+        {survey.length - questionOffset < questionsPerPage && (
           <>
             <br />
             <button
               className="bg-secondary-green rounded-xl w-3/5 mx-auto h-fit text-2xl p-4 mb-4 md:w-2/5 lg:w-1/5 hover:bg-primary-white hover:text-[#23655A]"
-              onClick={() => {}}
+              onClick={() => {
+                let completedAnswers = 0;
+                survey.forEach((question) => {
+                  if (question.answer) {
+                    completedAnswers++;
+                  }
+                });
+                if (completedAnswers === survey.length) {
+                  console.log("Survey complete");
+                  // TODO: Send survey to next page
+                  router.push("/signup");
+                } else {
+                  console.log(survey);
+                  console.log("Survey incomplete");
+                  alert("Please answer all questions before continuing.");
+                }
+              }}
             >
               Submit
             </button>
@@ -299,9 +418,9 @@ const PreAssessment = () => {
 interface SurveyQuestion {
   questionType: string;
   question: string;
-  answers: string[];
+  options: string[];
   databaseAlias: string;
-  answer: string | null;
+  answer: string | string[] | null;
 }
 
 export default PreAssessment;

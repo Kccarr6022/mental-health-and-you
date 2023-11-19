@@ -55,7 +55,7 @@ const Navbar = () => {
             <Link href="/home">Home</Link>
           </li>
           <li className="border-2 border-primary-green p-2">
-            <Link href="/Counselors">Counselors</Link>
+            <Link href="/counselors">Counselors</Link>
           </li>
           <li className="p-2 border-2 border-primary-green">
             {" "}
@@ -98,7 +98,7 @@ const Navbar = () => {
             <Link href="/home">Home</Link>
           </li>
           <li className="hover:text-shadow-glow transition-all duration-300">
-            <Link href="/Counselors">Counselors</Link>
+            <Link href="/counselors">Counselors</Link>
           </li>
           <li className="hover:text-shadow-glow transition-all duration-300">
             <Link href="/services">Services</Link>
