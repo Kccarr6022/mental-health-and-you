@@ -6,7 +6,7 @@ const SignUp = () => {
   return (
     <>
       <NavBar />
-      <section className="bg-primary-green min-h-[100vh] text-primary-white text-center pb-20">
+      <section className="bg-primary-green min-h-[100vh] text-primary-white text-center">
         <h1 className="pt-10 pb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-[75%] mx-auto">
           Account Creation
         </h1>
@@ -70,6 +70,9 @@ const SignUp = () => {
             placeholder="Confirm Password"
           />
         </div>
+        <button className="bg-secondary-green p-2 font-semibold my-10 w-1/2 sm:w-2/5 md:w-1/3 lg:w-1/4 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center text-white rounded-xl">
+          Confirm
+        </button>
       </section>
       <Footer />
     </>
