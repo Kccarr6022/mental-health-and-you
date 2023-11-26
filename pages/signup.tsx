@@ -1,8 +1,10 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import Footer from "@/components/Footer";
+import { useRouter } from "next/router";
 
 const SignUp = () => {
+  const router = useRouter();
   return (
     <>
       <NavBar />
@@ -18,7 +20,7 @@ const SignUp = () => {
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-6 font-semibold">
           A little more about you
         </h2>
-        <div className="border-solid border-4 w-4/5 mx-auto border-secondary-green rounded-xl mt-2 p-4 text-gray-800 grid-cols-1 grid sm:grid-cols-4 sm:gap-4 md:w-3/5 lg:w-2/4">
+        <div className="border-solid border-4 w-4/5 mx-auto border-secondary-green rounded-xl mt-2 p-4 text-gray-800 grid-cols-1 grid sm:grid-cols-4 sm:gap-4 md:w-3/5 lg:w-5/12">
           <input
             className="border-2 border-secondary-green rounded-md w-full h-10 mb-4 mx-auto pl-2 sm:col-span-2 sm:w-full"
             type="text"
@@ -61,16 +63,21 @@ const SignUp = () => {
         <div className="border-solid border-4 w-4/5 mx-auto border-secondary-green rounded-xl mt-2 p-4 text-gray-800 sm:w-2/5 md:w-1/3 lg:w-1/4">
           <input
             className="border-2 border-secondary-green rounded-md w-full h-10 mb-4 mx-auto pl-2"
-            type="text"
+            type="password"
             placeholder="Password"
           />
           <input
             className="border-2 border-secondary-green rounded-md w-full h-10 mx-auto pl-2"
-            type="text"
+            type="password"
             placeholder="Confirm Password"
           />
         </div>
-        <button className="bg-secondary-green p-2 font-semibold my-10 w-1/2 sm:w-2/5 md:w-1/3 lg:w-1/4 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center text-white rounded-xl">
+        <button
+          className="bg-secondary-green p-2 font-semibold my-10 w-1/2 sm:w-2/5 md:w-1/3 lg:w-1/4 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center text-white rounded-xl"
+          onClick={() => {
+            router.push("/payment-processing");
+          }}
+        >
           Confirm
         </button>
       </section>
