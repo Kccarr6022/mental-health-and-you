@@ -4,7 +4,7 @@ import Image from "next/image";
 import person3 from "../public/person3.png";
 import ClientDescription from "@/components/ClientDescription";
 
-const Counselors = () => {
+const counselors = () => {
   return (
     <div className="overflow-hidden">
       <Navbar />
@@ -90,4 +90,4 @@ const Counselors = () => {
   );
 };
 
-export default Counselors;
+export default counselors;

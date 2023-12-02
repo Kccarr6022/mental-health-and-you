@@ -1,8 +1,10 @@
 import BenefitsCheckList from "@/components/BenefitsCheckList";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
+import { useRouter } from "next/router";
 
 const paymentProcessing = () => {
+  const router = useRouter();
   return (
     <>
       <Navbar />
@@ -17,10 +19,10 @@ const paymentProcessing = () => {
             <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
           </div>
         </div>
-        <small className="text-xs mt-4 mb-6 text-left leading-7 font-semibold">
+        <small className="text-xs sm:text-sm md:text-base lg:text-lg mt-4 text-left leading-7 font-semibold">
           *Payment Processing located at the bottom
         </small>
-        <div className="w-5/6 mx-auto sm:w-4/6 lg:w-1/2">
+        <div className="w-5/6 mx-auto sm:w-4/6 lg:w-1/2 mt-8">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-[1.5em]">
             What is next?
           </h2>
@@ -37,7 +39,7 @@ const paymentProcessing = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl my-2 font-bold mb-[1.5em]">
             What is the therapy process?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl font-semibold text-left leading-7 mb-[1.5em]">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-left leading-7 mb-[1.5em]">
             If you have never been to therapy before, we have some information
             that may be helpful to you as you prepare.
           </p>
@@ -46,7 +48,7 @@ const paymentProcessing = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl my-2 font-bold mb-[1.5em]">
             Who will be my therapist?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl font-semibold text-left leading-7 mb-[1.5em]">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-left leading-7 mb-[1.5em]">
             We will look for a therapist that best fits your previously
             submitted information
           </p>
@@ -55,7 +57,7 @@ const paymentProcessing = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl my-2 font-bold mb-[1.5em]">
             How to I get in contact with my therapist?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl font-semibold text-left leading-7 mb-[1.5em]">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-left leading-7 mb-[1.5em]">
             You will have multiple options to communicate with your therapist,
             from phone calls to video meetings. You also have control over
             scheduling your monthly live meeting with your therapist.
@@ -65,7 +67,7 @@ const paymentProcessing = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl my-2 font-bold mb-[1.5em]">
             What if I am not satisfied with my therapist?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl font-semibold text-left leading-7 mb-[1.5em]">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-left leading-7 mb-[1.5em]">
             You can change your therapist at any time by requesting to be
             matched with a another. All of our therapists have arrays of
             qualifications and expertise that are available based on your
@@ -76,7 +78,7 @@ const paymentProcessing = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl my-2 font-bold mb-[1.5em]">
             What is the pricing like?{" "}
           </h2>
-          <p className="text-base sm:text-lg md:text-xl font-semibold text-left leading-7 mb-[1.5em]">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-left leading-7 mb-[1.5em]">
             Mental Health and You starts at 249.99 a month, roughly totaling 62$
             a week. Where as traditional therapist can cost anywhere from 150$
             to 180$, your Mental Health and You subscription comes with one
@@ -90,7 +92,7 @@ const paymentProcessing = () => {
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl my-2 font-bold mb-[1.5em]">
             How long will it take?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl font-semibold text-left leading-7 mb-[1.5em]">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-left leading-7 mb-[1.5em]">
             As long as you need it. You can manage your membership from your
             account page.
           </p>
@@ -117,7 +119,7 @@ const paymentProcessing = () => {
           </div>
         </div>
         <div className="w-5/6 mx-auto sm:w-4/6 lg:w-1/2">
-          <small className="text-xs mt-4 mb-6 text-left leading-7 font-semibold">
+          <small className="text-xs sm:text-sm md:text-base lg:text-lg mt-4 mb-6 text-left leading-7 font-semibold">
             *Monthly subscriptions start at{" "}
             <span className="font-bold">249.99 a month</span>. Subscription will
             be automatically renewed every month until cancellation.
@@ -167,7 +169,13 @@ const paymentProcessing = () => {
                 type="text"
                 className="rounded-md border-2 bg-[#D9D9D9] border-primary-green p-2 mx-auto mb-[1.5em] text-base h-8 text-gray-900"
               />
-              <button className="rounded-xl bg-secondary-green text-primary-white w-3/4 mx-auto p-2">
+              <button
+                className="rounded-xl bg-secondary-green text-primary-white w-3/4 mx-auto p-2"
+                onClick={() => {
+                  alert("Thank you for your payment!");
+                  router.push("/postassessment");
+                }}
+              >
                 Confirm
               </button>
             </div>
