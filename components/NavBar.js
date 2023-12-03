@@ -61,7 +61,9 @@ const Navbar = () => {
             {" "}
             <Link href="/services">Services</Link>
           </li>
-          <li className="p-2 border-2 border-primary-green">Booking</li>
+          <li className="p-2 border-2 border-primary-green">
+            <Link href="/booking">Booking</Link>
+          </li>
           <li className="p-2 border-2 border-primary-green">Blog</li>
           <li className="p-2 border-2 border-primary-green">About</li>
           <li className="p-2 border-2 border-primary-green">
@@ -104,7 +106,7 @@ const Navbar = () => {
             <Link href="/services">Services</Link>
           </li>
           <li className="hover:text-shadow-glow transition-all duration-300">
-            Booking
+            <Link href="/booking">Booking</Link>
           </li>
           <li className="hover:text-shadow-glow transition-all duration-300">
             Blog

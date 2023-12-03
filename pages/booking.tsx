@@ -1,4 +1,4 @@
-import Calendar from "react-calendar";
+import Calendar from "@/components/Calendar";
 import "react-calendar/dist/Calendar.css";
 import { useState } from "react";
 import Footer from "@/components/Footer";
@@ -18,7 +18,9 @@ const Booking = () => {
           <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
         </div>
         <section className="bg-primary-green min-h-[100vh] h-fit py-8 text-primary-white text-center">
-          <Calendar className="w-3/4 h-full mx-auto text-black" />
+          <div className="mx-auto w-3/4">
+            <Calendar />
+          </div>
         </section>
       </div>
       <Footer />
