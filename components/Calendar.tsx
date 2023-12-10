@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
 interface CalendarState {
   currentDay: Date;
@@ -62,18 +63,19 @@ function CalendarDays(props: {
         return (
           <div
             className={
-              "w-[125px] h-[75px] relative border-solid border-[1px] border-black hover:bg-[rgba(0,0,0,.10)]" +
-              (day.currentMonth ? "bg-primary-green" : "") +
+              "w-[40px] h-[24px] relative border-solid border-[1px] border-black cursor-pointer " +
+              (day.currentMonth ? "" : "bg-gray-300") +
               (day.selected
-                ? "bg-primary-green border-2 border-black border-solid"
-                : "")
+                ? " bg-primary-green "
+                : " border-solid border-[1px] border-black bg-white")
             }
             onClick={() => {
+              // console.log(day);
               props.changeCurrentDay(day);
               console.log(day);
             }}
           >
-            <p className="absolute right-[10px] text-black">{day.number}</p>
+            <p className="absolute right-[8px] text-black">{day.number}</p>
           </div>
         );
       })}
@@ -85,9 +87,16 @@ interface CalendarState {
   currentDay: Date;
 }
 
-class Calendar extends Component<{}, CalendarState> {
+interface PassedCalendarProps {
+  date: Date;
+  setDate: (date: Date) => void;
+}
+
+class Calendar extends Component<PassedCalendarProps, CalendarState> {
   weekdays: string[];
   months: string[];
+  date: Date;
+  setDate: (date: Date) => void;
   constructor(props: any) {
     super(props);
 
@@ -110,6 +119,8 @@ class Calendar extends Component<{}, CalendarState> {
     this.state = {
       currentDay: new Date(),
     };
+    this.date = props.date;
+    this.setDate = props.setDate;
   }
 
   changeCurrentDay = (day: any) => {
@@ -134,24 +145,24 @@ class Calendar extends Component<{}, CalendarState> {
 
   render() {
     return (
-      <div className="w-[900px] h-[900px] flex flex-col mt-8 mx-auto bg-primary-white">
-        <div className="w-full h-[50px] m-auto flex items-center justify-between">
-          <div className="w-1/4 h-full flex items-center">
-            <h2 className="m-auto">
+      <div className="w-[288px] h-[288px] flex flex-col mx-auto bg-primary-white rounded-[10px]">
+        <div className="w-full h-[16px] m-auto flex items-center justify-between text-black font-bold">
+          <div className="w-2/4 h-full flex items-center">
+            <h2 className="m-auto text-xs">
               {this.months[this.state.currentDay.getMonth()]}{" "}
               {this.state.currentDay.getFullYear()}
             </h2>
           </div>
-          <div className="w-1/4 h-full flex items-center">
+          <div className="w-2/4 h-full flex items-center ">
             <button
               className="m-auto flex items-center justify-center box-border bg-[#ffffff] border-none"
               onClick={this.previousDay}
             >
-              <span className="material-icons hover:text-[#99cccc]">
-                arrow_back
+              <span className="material-icons text-xs">
+                <FaAngleLeft />
               </span>
             </button>
-            <p>
+            <p className="text-xs">
               {this.months[this.state.currentDay.getMonth()].substring(0, 3)}{" "}
               {this.state.currentDay.getDate()}
             </p>
@@ -159,17 +170,17 @@ class Calendar extends Component<{}, CalendarState> {
               className="m-auto flex items-center justify-center box-border bg-[#ffffff] border-none"
               onClick={this.nextDay}
             >
-              <span className="material-icons hover:text-[#99cccc]">
-                arrow_forward
+              <span className="material-icons text-xs">
+                <FaAngleRight />
               </span>
             </button>
           </div>
         </div>
         <div className="w-full flex-grow flex flex-col">
-          <div className="h-[100px] w-full flex items-center justify-between">
+          <div className="h-[32px] w-full flex items-center justify-between">
             {this.weekdays.map((weekday) => {
               return (
-                <div className="w-[100px] text-center">
+                <div className="w-[32px] text-center text-xs font-semibold">
                   <p className="text-gray-800">{weekday}</p>
                 </div>
               );
