@@ -58,21 +58,19 @@ function CalendarDays(props: {
   }
 
   return (
-    <div className="w-full flex-grow flex flex-wrap justify-center box-border">
+    <div className="w-full grid grid-cols-7">
       {currentDays.map((day) => {
         return (
           <div
             className={
-              "w-[40px] h-[24px] relative border-solid border-[1px] border-black cursor-pointer " +
-              (day.currentMonth ? "" : "bg-gray-300") +
+              "h-[5vw] min-h-[36px] relative border-solid border-[1px] border-[#5EC7B6] cursor-pointer " +
+              (day.currentMonth ? "" : "bg-gray-400") +
               (day.selected
                 ? " bg-primary-green "
-                : " border-solid border-[1px] border-black bg-white")
+                : " border-solid border-[1px] border-[#5EC7B6] bg-white hover:bg-primary-green")
             }
             onClick={() => {
-              // console.log(day);
               props.changeCurrentDay(day);
-              console.log(day);
             }}
           >
             <p className="absolute right-[8px] text-black">{day.number}</p>
@@ -88,14 +86,14 @@ interface CalendarState {
 }
 
 interface PassedCalendarProps {
-  date: Date;
+  date?: Date;
   setDate: (date: Date) => void;
 }
 
 class Calendar extends Component<PassedCalendarProps, CalendarState> {
   weekdays: string[];
   months: string[];
-  date: Date;
+  date?: Date;
   setDate: (date: Date) => void;
   constructor(props: any) {
     super(props);
@@ -125,6 +123,7 @@ class Calendar extends Component<PassedCalendarProps, CalendarState> {
 
   changeCurrentDay = (day: any) => {
     this.setState({ currentDay: new Date(day.year, day.month, day.number) });
+    this.setDate(new Date(day.year, day.month, day.number));
   };
 
   nextDay = () => {
@@ -133,6 +132,11 @@ class Calendar extends Component<PassedCalendarProps, CalendarState> {
         this.state.currentDay.setDate(this.state.currentDay.getDate() + 1)
       ),
     });
+    this.setDate(
+      new Date(
+        this.state.currentDay.setDate(this.state.currentDay.getDate() + 1)
+      )
+    );
   };
 
   previousDay = () => {
@@ -141,56 +145,35 @@ class Calendar extends Component<PassedCalendarProps, CalendarState> {
         this.state.currentDay.setDate(this.state.currentDay.getDate() - 1)
       ),
     });
+    this.setDate(
+      new Date(
+        this.state.currentDay.setDate(this.state.currentDay.getDate() - 1)
+      )
+    );
   };
 
   render() {
     return (
-      <div className="w-[288px] h-[288px] flex flex-col mx-auto bg-primary-white rounded-[10px]">
-        <div className="w-full h-[16px] m-auto flex items-center justify-between text-black font-bold">
-          <div className="w-2/4 h-full flex items-center">
-            <h2 className="m-auto text-xs">
-              {this.months[this.state.currentDay.getMonth()]}{" "}
-              {this.state.currentDay.getFullYear()}
-            </h2>
-          </div>
-          <div className="w-2/4 h-full flex items-center ">
-            <button
-              className="m-auto flex items-center justify-center box-border bg-[#ffffff] border-none"
-              onClick={this.previousDay}
-            >
-              <span className="material-icons text-xs">
-                <FaAngleLeft />
-              </span>
-            </button>
-            <p className="text-xs">
-              {this.months[this.state.currentDay.getMonth()].substring(0, 3)}{" "}
-              {this.state.currentDay.getDate()}
-            </p>
-            <button
-              className="m-auto flex items-center justify-center box-border bg-[#ffffff] border-none"
-              onClick={this.nextDay}
-            >
-              <span className="material-icons text-xs">
-                <FaAngleRight />
-              </span>
-            </button>
-          </div>
+      <div className="w-full h-fit flex flex-col mx-auto bg-primary-white rounded-[10px] overflow-hidden border-[#5EC7B6] border-solid border-2">
+        <div className="bg-[#23655A] h-fit p-0 m-0">
+          <h2 className="m-auto text-base text-primary-white text-center font-semibold py-1">
+            {this.months[this.state.currentDay.getMonth()]}{" "}
+            {this.state.currentDay.getFullYear()}
+          </h2>
         </div>
-        <div className="w-full flex-grow flex flex-col">
-          <div className="h-[32px] w-full flex items-center justify-between">
-            {this.weekdays.map((weekday) => {
-              return (
-                <div className="w-[32px] text-center text-xs font-semibold">
-                  <p className="text-gray-800">{weekday}</p>
-                </div>
-              );
-            })}
-          </div>
-          <CalendarDays
-            day={this.state.currentDay}
-            changeCurrentDay={this.changeCurrentDay}
-          />
+        <div className="w-full grid grid-cols-7">
+          {this.weekdays.map((weekday) => {
+            return (
+              <div className="text-center text-xs font-semibold">
+                <p className="text-gray-800">{weekday}</p>
+              </div>
+            );
+          })}
         </div>
+        <CalendarDays
+          day={this.state.currentDay}
+          changeCurrentDay={this.changeCurrentDay}
+        />
       </div>
     );
   }

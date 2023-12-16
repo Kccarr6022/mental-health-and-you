@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
 interface PassedCalendarProps {
   date: Date;
@@ -7,13 +7,14 @@ interface PassedCalendarProps {
 
 class TimeSelector extends Component<PassedCalendarProps> {
   date: Date;
-  setDate: (date: Date) => void;
   times: string[];
-  constructor(props: any) {
+
+  constructor(props: PassedCalendarProps) {
     super(props);
 
+    this.date = this.props.date;
+
     this.date = props.date;
-    this.setDate = props.setDate;
     this.times = [
       "8:00 AM",
       "8:45 AM",
@@ -32,12 +33,20 @@ class TimeSelector extends Component<PassedCalendarProps> {
     ];
   }
 
-  changeCurrentDay = (day: any) => {
-    this.setState({ currentDay: new Date(day.year, day.month, day.number) });
-  };
+  componentDidUpdate(prevProps: PassedCalendarProps) {
+    // Check if the 'date' prop has changed
+    if (this.props.date !== prevProps.date) {
+      this.date = this.props.date;
+      this.forceUpdate();
+    }
+  }
 
   setSelectedTime = (time: string) => {
-    this.setDate(new Date(this.date.setHours(parseInt(time.split(":")[0]))));
+    const [hours, minutes] = time.split(":").map((value) => parseInt(value));
+    const newDate = new Date(this.date);
+    newDate.setHours(hours);
+    newDate.setMinutes(minutes);
+    this.props.setDate(newDate);
   };
 
   selectedTime = () => {
@@ -54,13 +63,16 @@ class TimeSelector extends Component<PassedCalendarProps> {
         <div className="overflow-y-scroll">
           {this.times.map((time) => (
             <div
+              key={time}
               className={
-                "flex justify-between items-center px-4 py-2 cursor-pointer " +
-                (time == this.selectedTime()
+                "flex justify-between items-center px-4 py-2 cursor-pointer z-20" +
+                (time === this.selectedTime()
                   ? "bg-primary-green"
                   : "bg-primary-white hover:bg-primary-green")
               }
-              onClick={() => this.setSelectedTime(time)}
+              onClick={() => {
+                this.setSelectedTime(time);
+              }}
             >
               <h2 className="text-xs">{time}</h2>
               <h2 className="text-xs">Available</h2>

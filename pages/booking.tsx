@@ -4,9 +4,11 @@ import { useState } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
 import TimeSelector from "@/components/TimeSelector";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 const Booking = () => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(null);
+  console.log("Booking date is:", currentDate);
   return (
     <>
       <Navbar />
@@ -20,18 +22,21 @@ const Booking = () => {
           <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
         </div>
         <section className="bg-primary-green min-h-[100vh] h-fit py-8 text-primary-white text-center">
-          <div className="mx-auto w-3/4 mb-8">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
-              Select a date
-            </h1>
-            <Calendar date={currentDate} setDate={setCurrentDate} />
+          <div className="mx-auto w-5/6 mb-8">
+            <div className="flex items-center justify-center">
+              <BiLeftArrow />
+              <Calendar date={currentDate} setDate={setCurrentDate} />
+              <BiRightArrow />
+            </div>
           </div>
-          <div>
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
-              Available times
-            </h1>
-            <TimeSelector date={currentDate} setDate={setCurrentDate} />
-          </div>
+          {currentDate && (
+            <div>
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+                Available times
+              </h1>
+              <TimeSelector date={currentDate} setDate={setCurrentDate} />
+            </div>
+          )}
         </section>
       </div>
       <Footer />
