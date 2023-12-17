@@ -22,7 +22,7 @@ const Booking = () => {
           <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
         </div>
         <section className="bg-primary-green min-h-[100vh] h-fit py-8 text-primary-white text-center">
-          <div className="mx-auto w-5/6 mb-8">
+          <div className="mx-auto w-5/6 sm:w-3/4 md:w-1/2 mb-8">
             <div className="flex items-center justify-center">
               <BiLeftArrow />
               <Calendar date={currentDate} setDate={setCurrentDate} />
@@ -30,7 +30,7 @@ const Booking = () => {
             </div>
           </div>
           {currentDate && (
-            <div>
+            <div className="mx-auto w-5/6 sm:w-3/4 md:w-1/2 mb-8">
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
                 Available times
               </h1>

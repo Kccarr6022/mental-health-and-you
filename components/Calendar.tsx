@@ -73,7 +73,9 @@ function CalendarDays(props: {
               props.changeCurrentDay(day);
             }}
           >
-            <p className="absolute right-[8px] text-black">{day.number}</p>
+            <p className="absolute right-[8px] text-black text-xs sm:text-sm md:text-base lg:text-lg">
+              {day.number}
+            </p>
           </div>
         );
       })}
@@ -156,7 +158,7 @@ class Calendar extends Component<PassedCalendarProps, CalendarState> {
     return (
       <div className="w-full h-fit flex flex-col mx-auto bg-primary-white rounded-[10px] overflow-hidden border-[#5EC7B6] border-solid border-2">
         <div className="bg-[#23655A] h-fit p-0 m-0">
-          <h2 className="m-auto text-base text-primary-white text-center font-semibold py-1">
+          <h2 className="m-auto text-xl sm:text-2xl md:text-3xl lg:text-4xl text-primary-white text-center font-semibold py-1">
             {this.months[this.state.currentDay.getMonth()]}{" "}
             {this.state.currentDay.getFullYear()}
           </h2>
@@ -164,7 +166,7 @@ class Calendar extends Component<PassedCalendarProps, CalendarState> {
         <div className="w-full grid grid-cols-7">
           {this.weekdays.map((weekday) => {
             return (
-              <div className="text-center text-xs font-semibold">
+              <div className="text-center text-xs sm:text-sm md:text-base lg:text-lg font-semibold">
                 <p className="text-gray-800">{weekday}</p>
               </div>
             );
