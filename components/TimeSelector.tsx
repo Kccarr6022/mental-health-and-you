@@ -5,9 +5,17 @@ interface PassedCalendarProps {
   setDate: (date: Date) => void;
 }
 
+type TimeSlot = {
+  available: boolean;
+};
+
+type Schedule = {
+  [time: string]: TimeSlot;
+};
+
 class TimeSelector extends Component<PassedCalendarProps> {
   date: Date;
-  times: string[];
+  times: Schedule;
 
   constructor(props: PassedCalendarProps) {
     super(props);
@@ -15,22 +23,51 @@ class TimeSelector extends Component<PassedCalendarProps> {
     this.date = this.props.date;
 
     this.date = props.date;
-    this.times = [
-      "8:00 AM",
-      "8:45 AM",
-      "9:30 AM",
-      "10:15 AM",
-      "11:00 AM",
-      "11:45 AM",
-      "12:30 PM",
-      "1:15 PM",
-      "2:00 PM",
-      "2:45 PM",
-      "3:30 PM",
-      "4:15 PM",
-      "5:00 PM",
-      "5:45 PM",
-    ];
+    this.times = {
+      // TODO: UPDATE TO PROP
+      "8:00 AM": {
+        available: true,
+      },
+      "8:45 AM": {
+        available: true,
+      },
+      "9:30 AM": {
+        available: true,
+      },
+      "10:15 AM": {
+        available: true,
+      },
+      "11:00 AM": {
+        available: true,
+      },
+      "11:45 AM": {
+        available: true,
+      },
+      "12:30 PM": {
+        available: true,
+      },
+      "1:15 PM": {
+        available: true,
+      },
+      "2:00 PM": {
+        available: true,
+      },
+      "2:45 PM": {
+        available: false,
+      },
+      "3:30 PM": {
+        available: false,
+      },
+      "4:15 PM": {
+        available: true,
+      },
+      "5:00 PM": {
+        available: true,
+      },
+      "5:45 PM": {
+        available: true,
+      },
+    };
   }
 
   componentDidUpdate(prevProps: PassedCalendarProps) {
@@ -63,7 +100,7 @@ class TimeSelector extends Component<PassedCalendarProps> {
           </h2>
         </div>
         <div className="overflow-y-scroll">
-          {this.times.map((time) => (
+          {Object.keys(this.times).map((time) => (
             <div
               key={time}
               className={
@@ -80,7 +117,7 @@ class TimeSelector extends Component<PassedCalendarProps> {
                 {time}
               </h2>
               <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
-                Available
+                {this.times[time].available ? "Available" : "Unavailable"}
               </h2>
             </div>
           ))}
