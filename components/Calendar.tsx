@@ -88,7 +88,7 @@ interface CalendarState {
 }
 
 interface PassedCalendarProps {
-  date?: Date;
+  date?: Date | null;
   setDate: (date: Date) => void;
 }
 

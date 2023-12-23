@@ -4,11 +4,13 @@ import { useState } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
 import TimeSelector from "@/components/TimeSelector";
+import AvailableCounselors from "@/components/AvailableCounselors";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 const Booking = () => {
-  const [currentDate, setCurrentDate] = useState(null);
-  console.log("Booking date is:", currentDate);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedCounselor, setSelectedCounselor] = useState(null);
+  console.log("Booking date is:", selectedDate);
   return (
     <>
       <Navbar />
@@ -25,18 +27,34 @@ const Booking = () => {
           <div className="mx-auto w-5/6 sm:w-3/4 md:w-1/2 mb-8">
             <div className="flex items-center justify-center">
               <BiLeftArrow />
-              <Calendar date={currentDate} setDate={setCurrentDate} />
+              <Calendar date={selectedDate} setDate={setSelectedDate} />
               <BiRightArrow />
             </div>
           </div>
-          {currentDate && (
+          {selectedDate && (
             <div className="mx-auto w-5/6 sm:w-3/4 md:w-1/2 mb-8">
               <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
-                Available times
+                {selectedDate.toDateString()}
               </h1>
-              <TimeSelector date={currentDate} setDate={setCurrentDate} />
+              <TimeSelector date={selectedDate} setDate={setSelectedDate} />
             </div>
           )}
+          {selectedDate && selectedDate.getHours() !== 0 && (
+            <div className="mx-auto w-5/6 sm:w-3/4 md:w-1/2 mb-8">
+              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+                Counselors for {selectedDate.getHours() % 12 || 12}:
+                {selectedDate.getMinutes() || "00"}{" "}
+                {selectedDate.getHours() > 12 ? "PM" : "AM"}
+              </h1>
+              <AvailableCounselors
+                date={selectedDate}
+                setCounselor={setSelectedCounselor}
+              />
+            </div>
+          )}
+          <button className="bg-secondary-green p-4 rounded-xl">
+            Submit Appointment
+          </button>
         </section>
       </div>
       <Footer />

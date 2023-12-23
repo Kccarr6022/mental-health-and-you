@@ -6,6 +6,7 @@ interface PassedCalendarProps {
 }
 
 type TimeSlot = {
+  value: string;
   available: boolean;
 };
 
@@ -26,45 +27,59 @@ class TimeSelector extends Component<PassedCalendarProps> {
     this.times = {
       // TODO: UPDATE TO PROP
       "8:00 AM": {
+        value: "8:00",
         available: true,
       },
       "8:45 AM": {
+        value: "8:45",
         available: true,
       },
       "9:30 AM": {
+        value: "9:30",
         available: true,
       },
       "10:15 AM": {
+        value: "10:15",
         available: true,
       },
       "11:00 AM": {
+        value: "11:00",
         available: true,
       },
       "11:45 AM": {
+        value: "11:45",
         available: true,
       },
       "12:30 PM": {
+        value: "12:30",
         available: true,
       },
       "1:15 PM": {
+        value: "13:15",
         available: true,
       },
       "2:00 PM": {
+        value: "14:00",
         available: true,
       },
       "2:45 PM": {
+        value: "14:45",
         available: false,
       },
       "3:30 PM": {
+        value: "15:30",
         available: false,
       },
       "4:15 PM": {
+        value: "16:15",
         available: true,
       },
       "5:00 PM": {
+        value: "17:00",
         available: true,
       },
       "5:45 PM": {
+        value: "17:45",
         available: true,
       },
     };
@@ -110,7 +125,7 @@ class TimeSelector extends Component<PassedCalendarProps> {
                   : "bg-primary-white hover:bg-primary-green")
               }
               onClick={() => {
-                this.setSelectedTime(time);
+                this.setSelectedTime(this.times[time].value);
               }}
             >
               <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl">
