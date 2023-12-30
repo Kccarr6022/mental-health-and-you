@@ -60,28 +60,32 @@ const Booking = () => {
               Appointment:
             </h1>
             <table className="bg-primary-white text-gray-900 w-full my-2">
-              <thead>
-                <td className="font-bold text-center">Date</td>
-                <td className="font-bold text-center">Time</td>
-                <td className="font-bold text-center">Counselor</td>
+              <thead className="font-bold text-center">
+                <tr>
+                  <td>Date</td>
+                  <td>Time</td>
+                  <td>Counselor</td>
+                </tr>
               </thead>
-              <tr>
-                <td className="text-center">
-                  {selectedDate?.toDateString() || "None"}
-                </td>
-                <td className="text-center">
-                  {selectedDate?.getHours() % 12 || 12}:
-                  {selectedDate?.getMinutes() || "00"}{" "}
-                  {selectedDate?.getHours() > 12 ? "PM" : "AM"}
-                </td>
-                <td className="text-center">
-                  {selectedCounselor?.name || "None"}
-                </td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td className="text-center">
+                    {selectedDate?.toDateString() || "None"}
+                  </td>
+                  <td className="text-center">
+                    {(selectedDate && selectedDate.getHours() % 12) || 12}:
+                    {(selectedDate && selectedDate.getMinutes()) || "00"}{" "}
+                    {selectedDate && selectedDate.getHours() > 12 ? "PM" : "AM"}
+                  </td>
+                  <td className="text-center">
+                    {selectedCounselor?.name || "None"}
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </div>
           <button className="bg-secondary-green p-4 rounded-xl">
-            Confirm Appointment
+            Book Appointment
           </button>
         </section>
       </div>

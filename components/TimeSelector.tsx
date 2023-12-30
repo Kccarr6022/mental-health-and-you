@@ -101,8 +101,16 @@ class TimeSelector extends Component<PassedCalendarProps> {
     this.props.setDate(newDate);
   };
 
-  selectedTime = () => {
-    return this.date.getHours() + ":00";
+  selectedTimeString = () => {
+    let hours = this.date.getHours().toString();
+    let minutes = this.date.getMinutes().toString();
+    let ampm = parseInt(hours, 10) >= 12 ? "PM" : "AM";
+    hours = (parseInt(hours) % 12).toString();
+    hours = (parseInt(hours, 10) ? parseInt(hours, 10) : 12).toString();
+    minutes = (parseInt(minutes, 10) < 10 ? 0 + minutes : minutes).toString();
+    minutes = parseInt(minutes, 10) === 0 ? "00" : minutes;
+    let strTime = hours + ":" + minutes + " " + ampm;
+    return strTime;
   };
 
   render() {
@@ -119,8 +127,8 @@ class TimeSelector extends Component<PassedCalendarProps> {
             <div
               key={time}
               className={
-                "grid grid-cols-2 px-4 py-2 cursor-pointer z-20" +
-                (time === this.selectedTime()
+                "grid grid-cols-2 px-4 py-2 cursor-pointer z-20 " +
+                (time === this.selectedTimeString()
                   ? "bg-primary-green"
                   : "bg-primary-white hover:bg-primary-green")
               }

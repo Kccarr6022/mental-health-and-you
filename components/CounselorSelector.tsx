@@ -65,6 +65,10 @@ const CounselorSelector: React.FC<CounselorSelectorProps> = ({
     };
   }, []);
 
+  useEffect(() => {
+    // TODO: Get counselors from backend
+  }, []);
+
   return (
     <div className="w-full flex flex-col sm:flex-row my-2 h-fit relative">
       <div className="w-full sm:w-2/6 flex items-center justify-center">
