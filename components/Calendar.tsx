@@ -59,9 +59,10 @@ function CalendarDays(props: {
 
   return (
     <div className="w-full grid grid-cols-7">
-      {currentDays.map((day) => {
+      {currentDays.map((day, key) => {
         return (
           <div
+            key={key}
             className={
               "h-[5vw] min-h-[36px] relative border-solid border-[1px] border-[#5EC7B6] cursor-pointer " +
               (day.currentMonth ? "" : "bg-gray-400") +
@@ -73,7 +74,7 @@ function CalendarDays(props: {
               props.changeCurrentDay(day);
             }}
           >
-            <p className="absolute right-[8px] text-black text-xs sm:text-sm md:text-base lg:text-lg">
+            <p className="absolute right-[8px] text-black text-base sm:text-lg md:text-xl lg:text-2xl">
               {day.number}
             </p>
           </div>
@@ -95,7 +96,7 @@ interface PassedCalendarProps {
 class Calendar extends Component<PassedCalendarProps, CalendarState> {
   weekdays: string[];
   months: string[];
-  date?: Date;
+  date?: Date | null;
   setDate: (date: Date) => void;
   constructor(props: any) {
     super(props);
@@ -127,6 +128,17 @@ class Calendar extends Component<PassedCalendarProps, CalendarState> {
     this.setState({ currentDay: new Date(day.year, day.month, day.number) });
     this.setDate(new Date(day.year, day.month, day.number));
   };
+
+  componentDidUpdate(prevProps: PassedCalendarProps) {
+    // Check if the 'date' prop has changed
+    console.log("componentDidUpdate");
+    if (this.props.date !== prevProps.date) {
+      console.log("componentDidUpdate if statement");
+      this.date = this.props.date;
+      console.log("date set to: " + this.date);
+      this.forceUpdate();
+    }
+  }
 
   nextDay = () => {
     this.setState({
@@ -164,9 +176,12 @@ class Calendar extends Component<PassedCalendarProps, CalendarState> {
           </h2>
         </div>
         <div className="w-full grid grid-cols-7">
-          {this.weekdays.map((weekday) => {
+          {this.weekdays.map((weekday, key) => {
             return (
-              <div className="text-center text-xs sm:text-sm md:text-base lg:text-lg font-semibold">
+              <div
+                className="text-center text-base sm:text-lg md:text-xl lg:text-2xl font-semibold"
+                key={key}
+              >
                 <p className="text-gray-800">{weekday}</p>
               </div>
             );

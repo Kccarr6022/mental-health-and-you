@@ -70,7 +70,7 @@ const CounselorSelector: React.FC<CounselorSelectorProps> = ({
   }, []);
 
   return (
-    <div className="w-full flex flex-col sm:flex-row my-2 h-fit relative">
+    <div className="w-full flex flex-col sm:flex-row my-6 h-fit relative">
       <div className="w-full sm:w-2/6 flex items-center justify-center">
         <img
           src={availableCounselors[counselorIndex].picture}
@@ -79,22 +79,24 @@ const CounselorSelector: React.FC<CounselorSelectorProps> = ({
           alt="Counselor"
         />
       </div>
-      <div className="w-full sm:w-3/6 overflow-y-scroll m-2 text-left">
-        <div className="h-4/5 ">
-          <h1 className="font-bold pb-2">
+      <div className="w-full sm:w-3/6 m-2 text-left">
+        <div className="h-fit ">
+          <h1 className="font-bold pb-2 text-lg sm:text-xl md:text-2xl lg:text-3xl">
             Name: {availableCounselors[counselorIndex].name}
           </h1>
-          <p>{availableCounselors[counselorIndex].description}</p>
+          <p className="h-fit text-lg sm:text-xl md:text-2xl lg:text-3xl">
+            {availableCounselors[counselorIndex].description}
+          </p>
         </div>
         <div className="h-1/5 flex flex-col">
           <button
-            className="bg-secondary-green p-2 rounded-xl w-full my-2 text-sm"
+            className="bg-secondary-green p-2 rounded-xl w-full my-2 text-sm sm:text-base md:text-lg lg:text-xl"
             onClick={() => setCounselor(availableCounselors[counselorIndex])}
           >
             Counselor Profile
           </button>
           <button
-            className="bg-secondary-green p-2 rounded-xl w-full my-2 text-sm"
+            className="bg-secondary-green p-2 rounded-xl w-full my-2 text-sm sm:text-base md:text-lg lg:text-xl"
             onClick={() => setCounselor(availableCounselors[counselorIndex])}
           >
             Select Counselor

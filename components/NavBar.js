@@ -40,7 +40,7 @@ const Navbar = () => {
             <Image src={"/logo.png"} height={80} width={80} alt="" />
           </li>
           <li className="pr-8 font-bold text-primary-green text-2xl">
-            <Link href="/preassessment">Sign Up</Link>
+            <Link href="/login">Log in</Link>
           </li>
         </ul>
 
@@ -121,7 +121,7 @@ const Navbar = () => {
             <Link href="/contact">Contact</Link>
           </li>
           <li className="px-4 font-bold text-primary-green text-center border-4 border-primary-green rounded-xl py-4 hover:bg-primary-green hover:text-slate-100 transition-all duration-200">
-            <Link href="/preassessment">Sign Up</Link>
+            <Link href="/login">Log in</Link>
           </li>
         </ul>
       </div>

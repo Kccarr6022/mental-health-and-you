@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
 import { useRouter } from "next/router";
 
-const paymentProcessing = () => {
+const PaymentProcessing = () => {
   const router = useRouter();
   return (
     <>
@@ -187,4 +187,4 @@ const paymentProcessing = () => {
   );
 };
 
-export default paymentProcessing;
+export default PaymentProcessing;

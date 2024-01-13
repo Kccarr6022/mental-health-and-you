@@ -10,7 +10,7 @@ const HomePage = () => {
     <div className="bg-primary-green w-full md:overflow-hidden">
       <NavBar />
       {/* Here is the title section */}
-      <section className="relative h-full w-full md:overflow-hidden my-8 md:my-0">
+      <section className="relative h-fit w-full md:overflow-hidden my-8 md:my-0">
         <div className="w-4/5 hidden md:block">
           <Image src="/person.png" width={1250} height={1250} alt="" />
         </div>
@@ -25,7 +25,7 @@ const HomePage = () => {
             <p className="text-2xl mt-6">
               Specializations in anxiety, trauma, depression, and more.
             </p>
-            <div className="grid grid-flow-col grid-cols-1 sm:grid-cols-2 gap-2 mt-6 w-1/2 mx-auto">
+            <div className="grid sm:grid-cols-2 grid-cols-1 gap-2 mt-6 w-1/2 mx-auto">
               <button className="rounded-3xl border-2 font-semibold p-6 hover:bg-secondary-green hover:border-primary-green transition-all duration-200">
                 <Link href="/about">Learn More</Link>
               </button>
@@ -128,7 +128,7 @@ const HomePage = () => {
       <HoroAccentLine />
 
       {/* Here is the about us section */}
-      <section className="md:flex text-primary-white bg-primary-green p-20 h-2/3 ml-[5%] overflow-hidden">
+      <section className="md:flex text-primary-white bg-primary-green p-10 justify-evenly overflow-hidden">
         <div className="md:w-1/2">
           <h2 className="text-5xl flex justify-center md:justify-start my-6">
             About Us
@@ -158,25 +158,26 @@ const HomePage = () => {
       <hr className="bg-secondary-green h-5 my-0 w-full border-0" />
 
       {/* Here is the quote section */}
-      <section className="relative w-full text-primary-white text-center overflow-hidden">
-        <Image
+      <section className="relative w-full h-[50vh] text-primary-white text-center overflow-hidden">
+        <img
           src="/quote-background.jpg"
-          width={1920}
-          height={1080}
           alt=""
-          className="mx-auto md:mx-0"
-          style={{ objectFit: "cover", width: "100%", height: "100%" }}
+          className="mx-auto md:mx-0 w-full h-full"
         />
         <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-r from-primary-green via-green-transparent to-primary-green"></div>
-        <div className="absolute my-auto top-0 bottom-0 h-fit  left-0 right-0 mx-auto">
-          <h2 className="text-4xl">
-            <span className="font-bold">
-              “One is not always happy when one is good; but one is always good
-              when one is happy”
-            </span>
-          </h2>
-          <br />
-          <h3 className="text-4xl">- Oscar Wilde</h3>
+        <div className="absolute my-auto top-0 bottom-0 h-fit left-0 right-0 mx-auto">
+          <div className="w-3/4 mx-auto">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+              <span className="font-bold">
+                “One is not always happy when one is good; but one is always
+                good when one is happy”
+              </span>
+            </h2>
+            <br />
+            <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+              - Oscar Wilde
+            </h3>
+          </div>
         </div>
       </section>
       <Footer />

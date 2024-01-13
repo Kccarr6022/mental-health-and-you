@@ -129,8 +129,9 @@ class TimeSelector extends Component<PassedCalendarProps> {
               className={
                 "grid grid-cols-2 px-4 py-2 cursor-pointer z-20 " +
                 (time === this.selectedTimeString()
-                  ? "bg-primary-green"
-                  : "bg-primary-white hover:bg-primary-green")
+                  ? "bg-primary-green "
+                  : "hover:bg-primary-green ") +
+                (this.times[time].available ? "" : "bg-red-400")
               }
               onClick={() => {
                 this.setSelectedTime(this.times[time].value);
