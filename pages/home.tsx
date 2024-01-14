@@ -158,7 +158,7 @@ const HomePage = () => {
       <hr className="bg-secondary-green h-5 my-0 w-full border-0" />
 
       {/* Here is the quote section */}
-      <section className="relative w-full h-[50vh] text-primary-white text-center overflow-hidden">
+      <section className="relative w-full min-h-[75vh] text-primary-white text-center overflow-hidden">
         <img
           src="/quote-background.jpg"
           alt=""
