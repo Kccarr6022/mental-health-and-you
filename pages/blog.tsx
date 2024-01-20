@@ -64,7 +64,7 @@ const Blog = () => {
           <hr className="border-2 md:border-4 lg:border-8 border-[#5EC7B6] w-[80%] mx-auto" />
           <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
         </div>
-        <div className="w-4/5 max-w-[800px] mx-auto">
+        <div className="w-4/5 mx-auto">
             {initialPosts.map((blogPost, key) => {
                 return <>
                 <article className="grid gird-cols-1 sm:grid-cols-3 p-2 my-4 bg-secondary-green-transparent" key={key}>
