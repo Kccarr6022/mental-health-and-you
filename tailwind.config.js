@@ -28,6 +28,7 @@ module.exports = {
         "green-transparent": "rgba(42,124,111, 0.7)",
         "primary-green": "#2A7C6F",
         "secondary-green": "#5EC7B6",
+        "secondary-green-transparent": "rgb(94, 199, 182, 0.25)",
         "footer-background-green": "#23655A",
         "footer-text-green": "#6B9D95",
         "primary-white": "#F0F0F0",
