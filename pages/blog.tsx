@@ -1,8 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
-import { UUID } from "crypto";
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 interface BlogPost {
   id: number;
@@ -40,6 +38,38 @@ const initialPosts: BlogPost[] = [
   },
   {
     id: 4,
+    title: "Plans for Mental Health and You",
+    thumbNail: `https://picsum.photos/750/750`,
+    body: "The plans for Mental Health and You include x, y, and z. Thank you for being apart of the site and we have future ideas",
+    date: new Date(),
+    author: "Mateo Cagliano",
+  },
+  {
+    id: 5,
+    title: "Welcome to Mental Health and You",
+    thumbNail: `https://picsum.photos/750/750`,
+    body: "This is our first blog post to Mental Health and You. Thank you for joining the site, we have great plans.",
+    date: new Date(),
+    author: "Kaden Carr",
+  },
+  {
+    id: 6,
+    title: "Plans for Mental Health and You",
+    thumbNail: `https://picsum.photos/750/750`,
+    body: "The plans for Mental Health and You include x, y, and z. Thank you for being apart of the site and we have future ideas",
+    date: new Date(),
+    author: "Mateo Cagliano",
+  },
+  {
+    id: 7,
+    title: "Plans for Mental Health and You",
+    thumbNail: `https://picsum.photos/750/750`,
+    body: "The plans for Mental Health and You include x, y, and z. Thank you for being apart of the site and we have future ideas",
+    date: new Date(),
+    author: "Mateo Cagliano",
+  },
+  {
+    id: 8,
     title: "Plans for Mental Health and You",
     thumbNail: `https://picsum.photos/750/750`,
     body: "The plans for Mental Health and You include x, y, and z. Thank you for being apart of the site and we have future ideas",
