@@ -8,7 +8,7 @@ const Contact = () => {
       <section className="bg-primary-green text-primary-white min-h-[calc(100vh-80px)] py-10">
         <div className="grid-cols-1 grid sm:grid-cols-2">
           <div className="flex-col justify-center w-4/5 mx-auto">
-            <h1 className="pb-4 text-2xl sm:text-4xl md:text-6xl lg:text-6xl font-bold mx-auto text-center">
+            <h1 className="pb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mx-auto text-center">
               Get in touch with us
             </h1>
             {[
@@ -19,7 +19,7 @@ const Contact = () => {
               return (
                 <>
                   <p
-                    className="text-base sm:text-xl md:text-2xl lg:text-4xl"
+                    className="text-base sm:text-lg md:text-xl lg:text-2xl"
                     key={key}
                   >
                     {key}
@@ -40,29 +40,29 @@ const Contact = () => {
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 justify-center mx-auto gap-2  w-4/5">
-            <label className="mb-2 text-base sm:text-xl md:text-3xl lg:text-5xl">
+            <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl">
               Name
-              <input className="text-black rounded-md mx-auto py-1 w-full" />
+              <input className="text-black rounded-md mx-auto py-1 w-full pl-2" />
             </label>
-            <label className="mb-2 text-base sm:text-xl md:text-3xl lg:text-5xl">
+            <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl">
               Email
-              <input className="text-black rounded-md mx-auto py-1 w-full" />
+              <input className="text-black rounded-md mx-auto py-1 w-full pl-2" />
             </label>
-            <label className="mb-2 text-base sm:text-xl md:text-3xl lg:text-5xl">
+            <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl">
               Phone
-              <input className="text-black rounded-md mx-auto py-1 w-full" />
+              <input className="text-black rounded-md mx-auto py-1 w-full pl-2" />
             </label>
-            <label className="mb-2 text-base sm:text-xl md:text-3xl lg:text-5xl">
+            <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl">
               Address
-              <input className="text-black rounded-md mx-auto py-1 w-full" />
+              <input className="text-black rounded-md mx-auto py-1 w-full pl-2" />
             </label>
-            <label className="mb-2 text-base sm:text-xl md:text-3xl lg:text-5xl sm:col-span-2">
+            <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl sm:col-span-2">
               Subject
-              <input className="text-black rounded-md mx-auto py-1 w-full" />
+              <input className="text-black rounded-md mx-auto py-1 w-full pl-2" />
             </label>
-            <label className="mb-2 text-base sm:text-xl md:text-3xl lg:text-5xl sm:text- sm:col-span-2">
+            <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl sm:col-span-2">
               Message
-              <textarea className="rounded-md mx-auto h-[20rem] w-full text-black text-base" />
+              <textarea className="rounded-md mx-auto h-[20rem] w-full text-black text-base pl-2" />
             </label>
             <button>Submit</button>
           </div>

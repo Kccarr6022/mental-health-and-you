@@ -37,7 +37,9 @@ const Navbar = () => {
             {!nav ? <GiHamburgerMenu size={40} /> : <HiOutlineX size={40} />}
           </li>
           <li className="">
-            <Image src={"/logo.png"} height={80} width={80} alt="" />
+            <Link href="/">
+              <Image src={"/logo.png"} height={80} width={80} alt="" />
+            </Link>
           </li>
           <li className="pr-8 font-bold text-primary-green text-2xl">
             <Link href="/login">Log in</Link>
@@ -84,16 +86,20 @@ const Navbar = () => {
       <div className="h-[100px] bg-slate-100 relative flex w-[100vw] text-primary-green z-50 drop-shadow-lg justify-between overflow-hidden">
         <ul className="flex w-full items-center">
           <li className="pl-14 text-primary-green border-0">
-            <Image
-              src={"/logo.png"}
-              height={80}
-              width={80}
-              alt=""
-              className=""
-            />
+            <Link href="/">
+              <Image
+                src={"/logo.png"}
+                height={80}
+                width={80}
+                alt=""
+                className=""
+              />
+            </Link>
           </li>
           <li className="ml-4 font-bold text-primary-green text-left">
-            <h1 className="md:text-l lg:text-2xl">Mental Health & You</h1>
+            <Link href="/">
+              <h1 className="md:text-l lg:text-2xl">Mental Health & You</h1>
+            </Link>
           </li>
         </ul>
 

@@ -54,7 +54,7 @@ const HomePage = () => {
               <span className="font-bold">you’re in the right place!</span>
             </p>
             <button className="rounded-full mx-auto border-2 text-2xl md:w-80 font-bold mt-5 p-4 group-hover:stroke-white block">
-              <Link href="/appointment">Book an Appointment</Link>
+              <Link href="/booking">Book an Appointment</Link>
             </button>
           </div>
         </div>

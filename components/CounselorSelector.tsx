@@ -74,12 +74,11 @@ const CounselorSelector: React.FC<CounselorSelectorProps> = ({
       <div className="w-full sm:w-2/6 flex items-center justify-center">
         <img
           src={availableCounselors[counselorIndex].picture}
-          className="resize-none rounded-xl mx-auto my-auto"
-          style={{ objectFit: "cover", width: "100%", height: "100%" }}
+          className=""
           alt="Counselor"
         />
       </div>
-      <div className="w-full sm:w-3/6 m-2 text-left">
+      <div className="w-full sm:w-3/6 m-2 text-left p-2">
         <div className="h-fit ">
           <h1 className="font-bold pb-2 text-lg sm:text-xl md:text-2xl lg:text-3xl">
             Name: {availableCounselors[counselorIndex].name}
