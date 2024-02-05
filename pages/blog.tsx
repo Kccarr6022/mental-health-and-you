@@ -2,7 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/NavBar";
 import { useState } from "react";
 import { RxCalendar } from "react-icons/rx";
-import { BlogPost } from "@/types";
+import { BlogPost } from "@/types/BlogPost";
 import Link from "next/link";
 
 const initialPosts: BlogPost[] = [
