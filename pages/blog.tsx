@@ -10,7 +10,7 @@ const initialPosts: BlogPost[] = [
     id: 1,
     title: "Welcome to Mental Health and You",
     thumbNail: `https://picsum.photos/750/750`,
-    body: "This is our first blog post to Mental Health and You. Thank you for joining the site, we have great plans. This is our first blog post to Mental Health and You. Thank you for joining the site, we have great plans. This is our first blog post to Mental Health and You. Thank you for joining the site, we have great plans.",
+    body: "This is our first blog post to Mental Health and Yssou. Thank you for joining the site, we have great plans. This is our first blog post to Mental Health and You. Thank you for joining the site, we have great plans. This is our first blog post to Mental Health and You. Thank you for joining the site, we have great plans.",
     date: new Date(),
     author: "Kaden Carr",
   },
@@ -67,9 +67,11 @@ const Blog = () => {
                     <img src={blogPost.thumbNail} />
                   </div>
                   <div className="px-2 col-span-1 sm:col-span-2">
-                    <h1 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4">
-                      {blogPost.title}
-                    </h1>
+                    <a href={`/blog/${blogPost.id}`}>
+                      <h1 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl mb-4">
+                        {blogPost.title}
+                      </h1>
+                    </a>
                     <p className="text-base sm:text-lg md:text-xl lg:text-2xl">
                       {blogPost.body.length <= 200
                         ? blogPost.body

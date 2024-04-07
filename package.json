@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.16",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.1.4",
+    "@types/mdx": "^2.0.12",
     "@types/react-dom": "18.0.11",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",

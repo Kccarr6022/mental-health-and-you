@@ -130,7 +130,7 @@ const Navbar = () => {
           <li className="hover:text-shadow-glow transition-all duration-300">
             <Link href="/contact">Contact</Link>
           </li>
-          <li className="px-4 font-bold text-primary-green text-center border-4 border-primary-green rounded-xl py-4 hover:bg-primary-green hover:text-slate-100 transition-all duration-200">
+          <li className="font-bold text-primary-green text-center border-4 border-primary-green rounded-xl p-4 hover:bg-primary-green hover:text-slate-100 transition-all duration-200">
             <Link href="/login">Log in</Link>
           </li>
         </ul>
