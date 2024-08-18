@@ -10,9 +10,9 @@ function About() {
   return (
     <>
       <Navbar />
-      <div className="bg-primary-green md:flex flex-col items-center text-slate-100 px-4">
+      <div className="flex-col items-center px-4 bg-primary-green md:flex text-slate-100">
         <div className="">
-          <h1 className="text-5xl pt-10 pb-6 text-center">About Us</h1>
+          <h1 className="pt-10 pb-6 text-5xl text-center">About Us</h1>
           <HoroAccentLine />
           <div className="md:flex justify-evenly md:w-full py-[3rem] items-center px-[10%] text-left">
             <Image
@@ -23,7 +23,7 @@ function About() {
               className="mx-auto md:mx-0"
             />
             <div className="md:w-[35%] md:flex flex-col items-center">
-              <h2 className="text-4xl py-5 text-center">Matteo Cagliano</h2>
+              <h2 className="py-5 text-4xl text-center">Matteo Cagliano</h2>
               <HoroAccentLine />
               <div className="my-4 text-lg">
                 <span className="font-bold">
@@ -63,25 +63,25 @@ function About() {
             </div>
           </div>
         </div>
-        <div className="md:flex w-full justify-center mx-4">
+        <div className="justify-center w-full mx-4 md:flex">
           <div className="md:w-[50%] flex flex-col md:place-items-end place-items-center">
             <h1 className="text-4xl md:mr-[20%]">Mental Health & You</h1>
             <span className="flex items-center w-[100%] md:justify-end md:translate-x-[20px]">
-              <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green" />
+              <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green" />
               <hr className="border-2 border-secondary-green min-w-[80%]"></hr>
-              <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green place-items-end" />
+              <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green place-items-end" />
             </span>
           </div>
           <div className="w-[55%]">
             <span className="hidden md:flex items-center w-[full] flex-grow">
-              <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green" />
+              <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green" />
               <hr className="border-2 border-secondary-green min-w-[80%]"></hr>
-              <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green" />
+              <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green" />
             </span>
             <div className="hidden md:inline-block h-[50%] min-h-[1em] min-w-[4px] self-stretch bg-secondary-green rounded-sm ml-[8px]"></div>
           </div>
         </div>
-        <div className="md:flex justify-evenly items-center pt-10">
+        <div className="items-center pt-10 md:flex justify-evenly">
           <div className="md:max-w-[30%] mx-10">
             <div className="my-4 text-lg">
               As{" "}
@@ -107,12 +107,12 @@ function About() {
           </div>
           <div className="w-[400px] h-[400px] border-0 bg-slate-100 rounded-xl mx-auto md:mx-0"></div>
         </div>
-        <div className="md:flex w-full justify-center pt-10">
+        <div className="justify-center w-full pt-10 md:flex">
           <div className="w-[45%] md:flex">
             <span className="hidden md:flex w-[full] flex-grow place-content-end translate-x-[2.5%]">
-              <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green" />
+              <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green" />
               <hr className="border-2 border-secondary-green min-w-[80%] mt-2"></hr>
-              <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green" />
+              <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green" />
             </span>
             <div className="hidden md:inline-block h-[50%] min-h-[1em] min-w-[4px] bg-secondary-green rounded-sm translate-y-[50%] translate-x-[250%]"></div>
           </div>
@@ -121,13 +121,13 @@ function About() {
               Starting Prices
             </h1>
             <span className="flex items-center w-[100%]">
-              <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green" />
+              <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green" />
               <hr className="border-2 border-secondary-green min-w-[80%]"></hr>
-              <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green place-items-end" />
+              <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green place-items-end" />
             </span>
           </div>
         </div>
-        <div className="md:flex justify-evenly w-full my-10">
+        <div className="w-full my-10 md:flex justify-evenly">
           <Image
             src={person4}
             alt=""
@@ -143,7 +143,7 @@ function About() {
               </span>{" "}
               to Mental & You that provides these monthly benefits:
             </div>
-            <ul className="text-xl list-disc ml-8">
+            <ul className="ml-8 text-xl list-disc">
               <li className="mb-5">Unlimited texting features</li>
               <li className="my-5">
                 One virtual online couselting session a month (30 - 45 minutes)
@@ -159,7 +159,7 @@ function About() {
             </div>
             <div className="mt-2">-Matteo Cagliano</div>
             <div className="flex justify-center">
-              <button className="border-2 rounded-full p-4 text-2xl mt-4 px-8">
+              <button className="p-4 px-8 mt-4 text-2xl border-2 rounded-full">
                 Contact Us
               </button>
             </div>

@@ -68,36 +68,36 @@ const BenefitsCheckList = () => {
   return (
     <section className="grid grid-cols-4 text-primary-white mx-6 text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl md sm:w-[60%] sm:mx-auto sm:text-md">
       {/* first row */}
-      <div className="flex flex-col border-secondary-green border-r-2 col-span-2 border-b-2"></div>
-      <div className="flex flex-col border-secondary-green overflow-hidden border-l-2 border-r-2 border-b-2">
+      <div className="flex flex-col col-span-2 border-b-2 border-r-2 border-secondary-green"></div>
+      <div className="flex flex-col overflow-hidden border-b-2 border-l-2 border-r-2 border-secondary-green">
         Mental Health & You
       </div>
-      <div className="flex flex-col border-secondary-green overflow-hidden border-l-2 border-b-2">
+      <div className="flex flex-col overflow-hidden border-b-2 border-l-2 border-secondary-green">
         Traditional in-office
       </div>
       {benefits.map((item, index) => (
         <>
-          <div className="flex flex-col text-left pl-2 overflow-hidden text-lg sm:text-xl md:text-2xl lg:text-4xl py-1 border-y-2 border-r-2 border-secondary-green col-span-2 ">
+          <div className="flex flex-col col-span-2 py-1 pl-2 overflow-hidden text-lg text-left border-r-2 sm:text-xl md:text-2xl lg:text-4xl border-y-2 border-secondary-green ">
             {item.benefit}
           </div>
-          <div className="flex flex-col overflow-hidden text-left text-lg sm:text-xl md:text-2xl lg:text-4xl border-secondary-green items-center justify-center border-2">
+          <div className="flex flex-col items-center justify-center overflow-hidden text-lg text-left border-2 sm:text-xl md:text-2xl lg:text-4xl border-secondary-green">
             {item.mentalHealthAndYou ? (
-              <div className="rounded-md bg-secondary-green p-1 m-2">
+              <div className="p-1 m-2 rounded-md bg-secondary-green">
                 <FaCheck color="#fffff" />
               </div>
             ) : (
-              <div className="bg-primary-white rounded-md p-1 m-2">
+              <div className="p-1 m-2 rounded-md bg-primary-white">
                 <FaTimes color="#5EC7B6" />
               </div>
             )}
           </div>
-          <div className="flex flex-col overflow-hidden text-left text-lg sm:text-xl md:text-2xl lg:text-4xl border-y-2 border-b-2 border-l-2 border-secondary-green items-center justify-center">
+          <div className="flex flex-col items-center justify-center overflow-hidden text-lg text-left border-b-2 border-l-2 sm:text-xl md:text-2xl lg:text-4xl border-y-2 border-secondary-green">
             {item.traditional ? (
-              <div className="rounded-md bg-secondary-green p-1 m-2">
+              <div className="p-1 m-2 rounded-md bg-secondary-green">
                 <FaCheck color="#fffff" />
               </div>
             ) : (
-              <div className="bg-primary-white rounded-md p-1 m-2">
+              <div className="p-1 m-2 rounded-md bg-primary-white">
                 <FaTimes color="#5EC7B6" />
               </div>
             )}

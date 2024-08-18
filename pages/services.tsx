@@ -9,7 +9,7 @@ const Services = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-primary-green text-primary-white w-full text-center h-fit py-10">
+      <div className="w-full py-10 text-center bg-primary-green text-primary-white h-fit">
         <h1 className=" pb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-[75%] mx-auto">
           Provide Virtual Services
         </h1>
@@ -20,12 +20,12 @@ const Services = () => {
         </div>
         <section className="bg-[#D9D9D9] w-3/4 sm:w-11/12 h-20vh overflow-hidden mx-auto sm:mr-0 my-12 grid-cols-1 sm:grid-cols-2 sm:rounded-l-3xl sm:rounded-none rounded-3xl grid">
           <img src="/services-1.jpg" alt="sample" className="" />
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <div className="text-[#1E1E1E] p-4 w-4/5">
-              <h2 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">
                 Psychotherapy
               </h2>
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl py-4">
+              <h2 className="py-4 text-lg sm:text-xl md:text-2xl lg:text-3xl">
                 Give Yourself Another Chance
               </h2>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl">
@@ -37,12 +37,12 @@ const Services = () => {
         </section>
         <section className="bg-[#D9D9D9] w-3/4 sm:w-11/12 h-20vh overflow-hidden mx-auto sm:ml-0 my-12 grid-cols-1 sm:grid-cols-2 sm:rounded-r-3xl sm:rounded-none rounded-3xl grid">
           <img src="/services-2.jpg" alt="sample" className="" />
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <div className="text-[#1E1E1E] p-4 w-4/5">
-              <h2 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">
                 Trauma Therapy
               </h2>
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl py-4">
+              <h2 className="py-4 text-lg sm:text-xl md:text-2xl lg:text-3xl">
                 The Process of Healing
               </h2>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl">
@@ -56,12 +56,12 @@ const Services = () => {
         </section>
         <section className="bg-[#D9D9D9] w-3/4 sm:w-11/12 h-20vh overflow-hidden mx-auto sm:mr-0 my-12 grid-cols-1 sm:grid-cols-2 sm:rounded-l-3xl sm:rounded-none rounded-3xl grid">
           <img src="/services-3.jpg" alt="sample" className="" />
-          <div className="flex justify-center items-center">
+          <div className="flex items-center justify-center">
             <div className="text-[#1E1E1E] p-4 w-4/5">
-              <h2 className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+              <h2 className="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">
                 Family Therapy
               </h2>
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl py-4">
+              <h2 className="py-4 text-lg sm:text-xl md:text-2xl lg:text-3xl">
                 The Attention You Always Deserved
               </h2>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl">

@@ -1,0 +1,87 @@
+.markdown h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.markdown a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.markdown pre {
+  white-space: pre-wrap; /* or pre-line or pre as per your needs */
+  background: #f5f5f5; /* Optional: background color for pre */
+  padding: 1rem; /* Optional: padding for pre */
+  border-radius: 5px; /* Optional: rounded corners for pre */
+}
+
+.markdown code {
+  white-space: pre-wrap; /* or pre-line or pre as per your needs */
+  background: #f5f5f5; /* Optional: background color for code */
+  padding: 0.2rem 0.4rem; /* Optional: padding for inline code */
+  border-radius: 3px; /* Optional: rounded corners for inline code */
+}
+
+.markdown h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.markdown ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown ol {
+  list-style-type: decimal;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.markdown blockquote {
+  border-left: 4px solid #d0d0d0;
+  padding-left: 1rem;
+  color: #6a737d;
+  margin-bottom: 1rem;
+}
+
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.markdown table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.markdown th,
+.markdown td {
+  border: 1px solid #d0d0d0;
+  padding: 0.5rem;
+}
+
+.markdown th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}

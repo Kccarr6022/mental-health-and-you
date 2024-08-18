@@ -243,10 +243,10 @@ const PreAssessment = () => {
                   key={questionIndex}
                   className="text-center relative mt-8 border-[5px] rounded-xl border-secondary-green mx-auto h-fit"
                 >
-                  <h2 className="text-2xl font-semibold mt-4 mx-4">
+                  <h2 className="mx-4 mt-4 text-2xl font-semibold">
                     {question.question}
                   </h2>
-                  <div className="flex questions-center my-4">
+                  <div className="flex my-4 questions-center">
                     {question.questionType === "multipleChoice" && (
                       <div className="flex flex-col w-full mx-auto">
                         {question.options.map((answer, answerIndex) => (
@@ -282,12 +282,12 @@ const PreAssessment = () => {
                     )}
                     {question.questionType == "informative" && (
                       <div key={questionIndex} className="w-5/6 mx-auto">
-                        <ul className="text-left text-xl leading-5 mx-auto w-full space-y-2">
+                        <ul className="w-full mx-auto space-y-2 text-xl leading-5 text-left">
                           {question.options.map((answer, answerIndex) => (
                             <li className="flex items-center" key={answerIndex}>
                               <input
                                 id={answer}
-                                className="w-8 h-8 bg-primary-white border-2 border-secondary-green rounded-xl flex-grow-0 flex-shrink-0"
+                                className="flex-grow-0 flex-shrink-0 w-8 h-8 border-2 bg-primary-white border-secondary-green rounded-xl"
                                 type="checkbox"
                                 value={answer}
                                 name={question.databaseAlias}

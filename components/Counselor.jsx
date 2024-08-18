@@ -15,7 +15,7 @@ const Counselors = (props) => {
             Name: <span className="text-lg mt-[2px] ml-3">John Smith</span>
           </div>
           <div className="text-xl">Specialties:</div>
-          <div className=" text-lg mb-2">
+          <div className="mb-2 text-lg ">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -24,15 +24,15 @@ const Counselors = (props) => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </div>
-          <span className="text-lg bg-secondary-green text-center px-5 py-1 border-0 rounded-md">
+          <span className="px-5 py-1 text-lg text-center border-0 rounded-md bg-secondary-green">
             PROFILE
           </span>
         </div>
         <div className="flex flex-col justify-center ml-8">
-          <div className="text-slate-400 text-4xl">
+          <div className="text-4xl text-slate-400">
             <FaArrowUp />
           </div>
-          <div className="text-secondary-green text-4xl mt-4">
+          <div className="mt-4 text-4xl text-secondary-green">
             <FaArrowDown />
           </div>
         </div>

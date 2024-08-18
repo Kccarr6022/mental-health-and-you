@@ -93,7 +93,7 @@ const FAQ = () => {
                     size={30}
                     fill="#FFFF"
                     onClick={() => handleFaqExpand(index)}
-                    className="flex items-center text-primary-white absolute transform -translate-y-1/2  top-4 right-0"
+                    className="absolute right-0 flex items-center transform -translate-y-1/2 text-primary-white top-4"
                   />
                   <p className="text-lg whitespace-pre-line">{item.answer}</p>
                 </>
@@ -102,7 +102,7 @@ const FAQ = () => {
                   size={30}
                   fill="#FFFF"
                   onClick={() => handleFaqExpand(index)}
-                  className="flex items-center text-primary-white absolute top-1/2 transform -translate-y-1/2 right-0"
+                  className="absolute right-0 flex items-center transform -translate-y-1/2 text-primary-white top-1/2"
                 />
               )}
             </div>

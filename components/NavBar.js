@@ -11,7 +11,7 @@ const Navbar = () => {
   const toggleMenu = () => setNav(!nav);
 
   const handleResize = () => {
-    if (window.innerWidth <= 800) {
+    if (window.innerWidth <= 1000) {
       setIsMobile(true);
     } else {
       setIsMobile(false);
@@ -29,9 +29,9 @@ const Navbar = () => {
   const MobileNav = () => {
     return (
       <div className="h-[80px] bg-slate-100 relative flex w-[100vw] text-slate-800 z-50 drop-shadow-lg justify-between">
-        <ul className="flex w-full justify-between items-center">
+        <ul className="flex items-center justify-between w-full">
           <li
-            className="pl-8 text-primary-green border-0 rounded-full"
+            className="pl-8 border-0 rounded-full text-primary-green"
             onClick={toggleMenu}
           >
             {!nav ? <GiHamburgerMenu size={40} /> : <HiOutlineX size={40} />}
@@ -41,7 +41,7 @@ const Navbar = () => {
               <Image src={"/logo.png"} height={80} width={80} alt="" />
             </Link>
           </li>
-          <li className="pr-8 font-bold text-primary-green text-2xl">
+          <li className="pr-8 text-2xl font-bold text-primary-green">
             <Link href="/login">Log in</Link>
           </li>
         </ul>
@@ -53,10 +53,10 @@ const Navbar = () => {
               : "absolute z-20 mt-[80px] bg-slate-100 text-2xl border-0 rounded-br-2xl text-center text-primary-green min-w-[12%] animate-fadeDown"
           }
         >
-          <li className="border-2 border-primary-green p-2">
+          <li className="p-2 border-2 border-primary-green">
             <Link href="/home">Home</Link>
           </li>
-          <li className="border-2 border-primary-green p-2">
+          <li className="p-2 border-2 border-primary-green">
             <Link href="/counselors">Counselors</Link>
           </li>
           <li className="p-2 border-2 border-primary-green">
@@ -85,9 +85,9 @@ const Navbar = () => {
 
   const DesktopNav = () => {
     return (
-      <div className="h-[100px] bg-slate-100 relative flex w-[100vw] text-primary-green z-50 drop-shadow-lg justify-between overflow-hidden">
-        <ul className="flex w-full items-center">
-          <li className="pl-14 text-primary-green border-0">
+      <div className="h-[100px] bg-slate-100 relative flex w-full text-primary-green z-50 drop-shadow-lg justify-between overflow-hidden">
+        <ul className="flex items-center w-full">
+          <li className="border-0 pl-14 text-primary-green">
             <Link href="/">
               <Image
                 src={"/logo.png"}
@@ -98,39 +98,39 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li className="ml-4 font-bold text-primary-green text-left">
+          <li className="ml-4 font-bold text-left text-primary-green">
             <Link href="/">
               <h1 className="md:text-l lg:text-2xl">Mental Health & You</h1>
             </Link>
           </li>
         </ul>
 
-        <ul className="flex w-full items-center gap-10 justify-end mr-6 text-xl z-10">
-          <li className="hover:text-shadow-glow transition-all duration-300">
+        <ul className="z-10 flex items-center justify-end w-full gap-10 p-1 text-xl sm:text-base md:text-lg lg:text-xl">
+          <li className="transition-all duration-300 hover:text-shadow-glow">
             <Link href="/home">Home</Link>
           </li>
-          <li className="hover:text-shadow-glow transition-all duration-300">
+          <li className="transition-all duration-300 hover:text-shadow-glow">
             <Link href="/counselors">Counselors</Link>
           </li>
-          <li className="hover:text-shadow-glow transition-all duration-300">
+          <li className="transition-all duration-300 hover:text-shadow-glow">
             <Link href="/services">Services</Link>
           </li>
-          <li className="hover:text-shadow-glow transition-all duration-300">
+          <li className="transition-all duration-300 hover:text-shadow-glow">
             <Link href="/booking">Booking</Link>
           </li>
-          <li className="hover:text-shadow-glow transition-all duration-300">
+          <li className="transition-all duration-300 hover:text-shadow-glow">
             <Link href="/blog">Blog</Link>
           </li>
-          <li className="hover:text-shadow-glow transition-all duration-300">
+          <li className="transition-all duration-300 hover:text-shadow-glow">
             <Link href="/about">About</Link>
           </li>
-          <li className="hover:text-shadow-glow transition-all duration-300">
+          <li className="transition-all duration-300 hover:text-shadow-glow">
             <Link href="/faq">FAQ</Link>
           </li>
-          <li className="hover:text-shadow-glow transition-all duration-300">
+          <li className="transition-all duration-300 hover:text-shadow-glow">
             <Link href="/contact">Contact</Link>
           </li>
-          <li className="font-bold text-primary-green text-center border-4 border-primary-green rounded-xl p-4 hover:bg-primary-green hover:text-slate-100 transition-all duration-200">
+          <li className="p-4 font-bold text-center transition-all duration-200 border-4 text-primary-green border-primary-green rounded-xl hover:bg-primary-green hover:text-slate-100">
             <Link href="/login">Log in</Link>
           </li>
         </ul>

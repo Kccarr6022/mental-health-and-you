@@ -70,32 +70,32 @@ const CounselorSelector: React.FC<CounselorSelectorProps> = ({
   }, []);
 
   return (
-    <div className="w-full flex flex-col sm:flex-row my-6 h-fit relative">
-      <div className="w-full sm:w-2/6 flex items-center justify-center">
+    <div className="relative flex flex-col w-full my-6 sm:flex-row h-fit">
+      <div className="flex items-center justify-center w-full sm:w-2/6">
         <img
           src={availableCounselors[counselorIndex].picture}
           className=""
           alt="Counselor"
         />
       </div>
-      <div className="w-full sm:w-3/6 m-2 text-left p-2">
+      <div className="w-full p-2 m-2 text-left sm:w-3/6">
         <div className="h-fit ">
-          <h1 className="font-bold pb-2 text-lg sm:text-xl md:text-2xl lg:text-3xl">
+          <h1 className="pb-2 text-lg font-bold sm:text-xl md:text-2xl lg:text-3xl">
             Name: {availableCounselors[counselorIndex].name}
           </h1>
-          <p className="h-fit text-lg sm:text-xl md:text-2xl lg:text-3xl">
+          <p className="text-lg h-fit sm:text-xl md:text-2xl lg:text-3xl">
             {availableCounselors[counselorIndex].description}
           </p>
         </div>
-        <div className="h-1/5 flex flex-col">
+        <div className="flex flex-col h-1/5">
           <button
-            className="bg-secondary-green p-2 rounded-xl w-full my-2 text-sm sm:text-base md:text-lg lg:text-xl"
+            className="w-full p-2 my-2 text-sm bg-secondary-green rounded-xl sm:text-base md:text-lg lg:text-xl"
             onClick={() => setCounselor(availableCounselors[counselorIndex])}
           >
             Counselor Profile
           </button>
           <button
-            className="bg-secondary-green p-2 rounded-xl w-full my-2 text-sm sm:text-base md:text-lg lg:text-xl"
+            className="w-full p-2 my-2 text-sm bg-secondary-green rounded-xl sm:text-base md:text-lg lg:text-xl"
             onClick={() => setCounselor(availableCounselors[counselorIndex])}
           >
             Select Counselor

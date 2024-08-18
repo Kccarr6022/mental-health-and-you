@@ -9,7 +9,7 @@ const PaymentProcessing = () => {
     <>
       <Navbar />
       <section className="bg-primary-green min-h-[100vh] h-fit py-8 text-primary-white text-center">
-        <div className=" lg:w-5/6 mx-auto">
+        <div className="mx-auto  lg:w-5/6">
           <h1 className="pb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-[75%] mx-auto">
             Welcome to Mental Health and You!
           </h1>
@@ -19,10 +19,10 @@ const PaymentProcessing = () => {
             <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
           </div>
         </div>
-        <small className="text-xs sm:text-sm md:text-base lg:text-lg mt-4 text-left leading-7 font-semibold">
+        <small className="mt-4 text-xs font-semibold leading-7 text-left sm:text-sm md:text-base lg:text-lg">
           *Payment Processing located at the bottom
         </small>
-        <div className="w-5/6 mx-auto sm:w-4/6 lg:w-1/2 mt-8">
+        <div className="w-5/6 mx-auto mt-8 sm:w-4/6 lg:w-1/2">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-[1.5em]">
             What is next?
           </h2>
@@ -97,7 +97,7 @@ const PaymentProcessing = () => {
             account page.
           </p>
         </div>
-        <h1 className="pt-3 pb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-3/4 mx-auto">
+        <h1 className="w-3/4 pt-3 pb-2 mx-auto text-3xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
           Mental Health and You vs Traditional Therapy
         </h1>
         <div className="relative">
@@ -105,10 +105,10 @@ const PaymentProcessing = () => {
           <hr className="border-2 md:border-4 lg:border-8 border-[#5EC7B6] w-[80%] mx-auto" />
           <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
         </div>
-        <div className="mx-auto lg:w-5/6 py-4 mt-4">
+        <div className="py-4 mx-auto mt-4 lg:w-5/6">
           <BenefitsCheckList />
         </div>
-        <div className=" lg:w-5/6 mx-auto">
+        <div className="mx-auto  lg:w-5/6">
           <h1 className="pt-4 pb-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-[75%] mx-auto">
             Payment
           </h1>
@@ -119,16 +119,16 @@ const PaymentProcessing = () => {
           </div>
         </div>
         <div className="w-5/6 mx-auto sm:w-4/6 lg:w-1/2">
-          <small className="text-xs sm:text-sm md:text-base lg:text-lg mt-4 mb-6 text-left leading-7 font-semibold">
+          <small className="mt-4 mb-6 text-xs font-semibold leading-7 text-left sm:text-sm md:text-base lg:text-lg">
             *Monthly subscriptions start at{" "}
             <span className="font-bold">249.99 a month</span>. Subscription will
             be automatically renewed every month until cancellation.
           </small>
-          <div className="h-fit w-fit mx-auto mt-6">
-            <div className="bg-secondary-green rounded-t-xl h-8 w-36 mx-auto flex align-middle justify-center">
+          <div className="mx-auto mt-6 h-fit w-fit">
+            <div className="flex justify-center h-8 mx-auto align-middle bg-secondary-green rounded-t-xl w-36">
               <h1 className="text-xl">Credit/Debit</h1>
             </div>
-            <div className="rounded-xl p-4 max-w-full w-72 h-fit mx-auto border-solid border-4 border-secondary-green items-center grid">
+            <div className="grid items-center max-w-full p-4 mx-auto border-4 border-solid rounded-xl w-72 h-fit border-secondary-green">
               <label htmlFor="name" className="text-base">
                 Name on Card
               </label>
@@ -170,7 +170,7 @@ const PaymentProcessing = () => {
                 className="rounded-md border-2 bg-[#D9D9D9] border-primary-green p-2 mx-auto mb-[1.5em] text-base h-8 text-gray-900"
               />
               <button
-                className="rounded-xl bg-secondary-green text-primary-white w-3/4 mx-auto p-2"
+                className="w-3/4 p-2 mx-auto rounded-xl bg-secondary-green text-primary-white"
                 onClick={() => {
                   alert("Thank you for your payment!");
                   router.push("/postassessment");

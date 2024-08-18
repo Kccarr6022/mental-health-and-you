@@ -4,62 +4,40 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-footer-background-green md:h-32 md:flex flex-col justify-evenly p-6 md:p-0 overflow-hidden">
-      <div className="md:flex hidden justify-between">
-        <ul className="md:flex text-xl mx-[10%] gap-16 pl-6">
-          <li className="text-footer-text-green cursor-pointer">
-            <Link href="/">Home</Link>
+    <footer className="mx-auto !px-6 bg-[#23655A] text-secondary-green">
+      <div className="grid grid-cols-12 p-3 text-sm">
+        <ul className="grid grid-cols-2 col-span-12 md:col-span-9 md:grid-cols-8">
+          <li>Home</li>
+          <li>Counselors</li>
+          <li>Services</li>
+          <li>Blog</li>
+          <li>Booking</li>
+          <li>About</li>
+          <li>FAQ</li>
+          <li>Contact</li>
+        </ul>
+        <ul className="grid justify-end grid-cols-2 col-span-12 gap-2 py-1 md:flex md:col-span-3">
+          <li>
+            <FaFacebook />
           </li>
-          <li className="text-footer-text-green cursor-pointer">
-            <Link href="/">Counselors</Link>
+          <li>
+            <FaTwitter />
           </li>
-          <li className="text-footer-text-green cursor-pointer">
-            <Link href="/">Services</Link>
+          <li>
+            <FaInstagram />
           </li>
-          <li className="text-footer-text-green cursor-pointer">
-            <Link href="/">Blog</Link>
-          </li>
-          <li className="text-footer-text-green cursor-pointer">
-            <Link href="/">Booking</Link>
-          </li>
-          <li className="text-footer-text-green cursor-pointer">
-            <Link href="/">About</Link>
-          </li>
-          <li className="text-footer-text-green cursor-pointer">
-            <Link href="/">FAQ</Link>
-          </li>
-          <li className="text-footer-text-green cursor-pointer">
-            <Link href="/">Contact</Link>
+          <li>
+            <FaLinkedin />
           </li>
         </ul>
-        <ul className="md:flex md:mr-0 mr-[11%] gap-x-6">
-          <li>
-            <FaFacebook size={35} color="#6B9D95" />
-          </li>
-          <li>
-            <FaTwitter size={35} color="#6B9D95" />
-          </li>
-          <li>
-            <FaInstagram size={35} color="#6B9D95" />
-          </li>
-          <li>
-            <FaLinkedin size={35} color="#6B9D95" />
-          </li>
+        <hr className="w-full col-span-12" />
+        <ul className="flex col-span-12 gap-3 py-1 md:col-span-6">
+          <li>Terms & Conditions</li>
+          <li>Privacy Policy</li>
+          <li>©2021 by Mental Health & You</li>
         </ul>
       </div>
-      <hr className="mx-[10%] border-2 rounded-full border-secondary-green hidden md:block" />
-      <div className="md:flex items-center mx-[10%]">
-        <div className="text-footer-text-green mx-5 cursor-pointer text-xl">
-          Terms & Conditions
-        </div>
-        <div className="text-footer-text-green mx-5 cursor-pointer text-xl">
-          Privacy Policy
-        </div>
-        <div className="text-footer-text-green mx-5 cursor-pointer text-xl">
-          @2021 by Mental Health & You
-        </div>
-      </div>
-    </div>
+    </footer>
   );
 };
 

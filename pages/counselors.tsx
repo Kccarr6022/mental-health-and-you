@@ -9,39 +9,39 @@ const counselors = () => {
     <div className="overflow-hidden">
       <Navbar />
       <div className="flex flex-col bg-primary-green pt-[3%]">
-        <div className="flex justify-evenly w-full">
-          <span className="text-xl md:text-5xl text-slate-100 md:mb-5 font-bold md:font-normal">
+        <div className="flex w-full justify-evenly">
+          <span className="text-xl font-bold md:text-5xl text-slate-100 md:mb-5 md:font-normal">
             Public Profile
           </span>
-          <span className="text-xl md:text-5xl text-slate-100 md:mb-5 hidden md:block">
+          <span className="hidden text-xl md:text-5xl text-slate-100 md:mb-5 md:block">
             Current Patients
           </span>
         </div>
-        <span className="flex items-center w-full justify-center">
-          <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green" />
+        <span className="flex items-center justify-center w-full">
+          <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green" />
           <hr className="border-2 border-secondary-green min-w-[40%]"></hr>
-          <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green hidden md:block" />
+          <div className="hidden w-5 h-5 border rounded-full border-secondary-green bg-secondary-green md:block" />
           <hr className="border-2 border-secondary-green min-w-[40%]"></hr>
-          <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green" />
+          <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green" />
         </span>
         <div className="md:flex mx-[10%] text-lg">
           <div className="flex flex-col md:max-w-[49.8%] mt-8 items-center md:pr-10">
-            <div className="md:flex items-center">
+            <div className="items-center md:flex">
               <Image src={person3} alt="" height={500} width={250} />
               <div className="ml-5">
-                <div className="text-slate-100 mb-5 text-lg">
+                <div className="mb-5 text-lg text-slate-100">
                   <span className="font-bold">Name: </span>
                   John Smith
                 </div>
-                <div className="text-slate-100 mb-5 text-lg">
+                <div className="mb-5 text-lg text-slate-100">
                   <span className="font-bold">Gender: </span>
                   Male
                 </div>
-                <div className="text-slate-100 mb-5 text-lg">
+                <div className="mb-5 text-lg text-slate-100">
                   <span className="font-bold">Age: </span>
                   26
                 </div>
-                <div className="text-slate-100 text-lg">
+                <div className="text-lg text-slate-100">
                   <span className="font-bold">Ethnicity: </span>
                   Caucasian
                 </div>
@@ -63,19 +63,19 @@ const counselors = () => {
               nisi ut aliquip ex ea commodo consequat.
             </div>
             <div className="md:max-w-[50%] flex justify-center">
-              <button className="text-lg text-slate-100 bg-secondary-green border-0 rounded-lg my-6 p-4 font-bold">
+              <button className="p-4 my-6 text-lg font-bold border-0 rounded-lg text-slate-100 bg-secondary-green">
                 EDIT PROFILE
               </button>
             </div>
           </div>
-          <span className="text-lg md:text-5xl text-slate-100 md:mb-5 md:hidden font-bold md:font-normal w-full flex justify-center">
+          <span className="flex justify-center w-full text-lg font-bold md:text-5xl text-slate-100 md:mb-5 md:hidden md:font-normal">
             Current Patients
           </span>
-          <span className="flex items-center w-full justify-center md:hidden">
-            <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green" />
+          <span className="flex items-center justify-center w-full md:hidden">
+            <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green" />
             <hr className="border-2 border-secondary-green min-w-[40%]"></hr>
             <hr className="border-2 border-secondary-green min-w-[40%]"></hr>
-            <div className="border rounded-full border-secondary-green w-5 h-5 bg-secondary-green" />
+            <div className="w-5 h-5 border rounded-full border-secondary-green bg-secondary-green" />
           </span>
           <div className="hidden md:inline-block h-[full] min-h-[1em] min-w-[4px] self-stretch bg-secondary-green rounded-sm ml-[1px]"></div>
           <div className="flex flex-col items-center mt-8">

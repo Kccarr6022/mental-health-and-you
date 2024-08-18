@@ -6,9 +6,9 @@ const Contact = () => {
     <>
       <Navbar />
       <section className="bg-primary-green text-primary-white min-h-[calc(100vh-80px)] py-10">
-        <div className="grid-cols-1 grid sm:grid-cols-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2">
           <div className="flex-col justify-center w-4/5 mx-auto">
-            <h1 className="pb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mx-auto text-center">
+            <h1 className="pb-4 mx-auto text-xl font-bold text-center sm:text-2xl md:text-3xl lg:text-4xl">
               Get in touch with us
             </h1>
             {[
@@ -29,36 +29,36 @@ const Contact = () => {
               );
             })}
             <div className="bg-blue">
-              <p className="text-xs sm:text-base md:text-lg lg:text-xl text-center">
+              <p className="text-xs text-center sm:text-base md:text-lg lg:text-xl">
                 mentalhealthandyou6@gmail.com
               </p>
             </div>
             <div className="bg-blue">
-              <p className="text-xs sm:text-base md:text-lg lg:text-xl text-center">
+              <p className="text-xs text-center sm:text-base md:text-lg lg:text-xl">
                 772-634-5324
               </p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 justify-center mx-auto gap-2  w-4/5">
+          <div className="grid justify-center w-4/5 grid-cols-1 gap-2 mx-auto sm:grid-cols-2">
             <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl">
               Name
-              <input className="text-black rounded-md mx-auto py-1 w-full pl-2" />
+              <input className="w-full py-1 pl-2 mx-auto text-black rounded-md" />
             </label>
             <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl">
               Email
-              <input className="text-black rounded-md mx-auto py-1 w-full pl-2" />
+              <input className="w-full py-1 pl-2 mx-auto text-black rounded-md" />
             </label>
             <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl">
               Phone
-              <input className="text-black rounded-md mx-auto py-1 w-full pl-2" />
+              <input className="w-full py-1 pl-2 mx-auto text-black rounded-md" />
             </label>
             <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl">
               Address
-              <input className="text-black rounded-md mx-auto py-1 w-full pl-2" />
+              <input className="w-full py-1 pl-2 mx-auto text-black rounded-md" />
             </label>
             <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl sm:col-span-2">
               Subject
-              <input className="text-black rounded-md mx-auto py-1 w-full pl-2" />
+              <input className="w-full py-1 pl-2 mx-auto text-black rounded-md" />
             </label>
             <label className="mb-2 text-base sm:text-lg md:text-xl lg:text-2xl sm:col-span-2">
               Message

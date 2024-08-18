@@ -33,7 +33,7 @@ const Booking = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-primary-green text-primary-white w-full text-center h-fit py-10">
+      <div className="w-full py-10 text-center bg-primary-green text-primary-white h-fit">
         <h1 className=" pb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold w-[75%] mx-auto">
           Book Appointment
         </h1>
@@ -43,7 +43,7 @@ const Booking = () => {
           <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
         </div>
         <section className="bg-primary-green min-h-[100vh] h-fit py-8 text-primary-white text-center">
-          <div className="mx-auto w-5/6 sm:w-3/4 md:w-1/2 mb-8">
+          <div className="w-5/6 mx-auto mb-8 sm:w-3/4 md:w-1/2">
             <div className="flex items-center justify-center">
               <BiLeftArrow onClick={decrementMonth} />
               <Calendar date={selectedDate} setDate={setSelectedDate} />
@@ -51,16 +51,16 @@ const Booking = () => {
             </div>
           </div>
           {selectedDate && (
-            <div className="mx-auto w-5/6 sm:w-3/4 md:w-1/2 mb-8">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+            <div className="w-5/6 mx-auto mb-8 sm:w-3/4 md:w-1/2">
+              <h1 className="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">
                 {selectedDate.toDateString()}
               </h1>
               <TimeSelector date={selectedDate} setDate={setSelectedDate} />
             </div>
           )}
           {selectedDate && selectedDate.getHours() !== 0 && (
-            <div className="mx-auto w-5/6 sm:w-3/4 md:w-1/2 mb-8">
-              <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+            <div className="w-5/6 mx-auto mb-8 sm:w-3/4 md:w-1/2">
+              <h1 className="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">
                 Counselors for {selectedDate.getHours() % 12 || 12}:
                 {selectedDate.getMinutes() || "00"}{" "}
                 {selectedDate.getHours() > 12 ? "PM" : "AM"}
@@ -71,12 +71,12 @@ const Booking = () => {
               />
             </div>
           )}
-          <div className="mx-auto w-5/6 sm:w-3/4 md:w-1/2 mb-8">
-            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+          <div className="w-5/6 mx-auto mb-8 sm:w-3/4 md:w-1/2">
+            <h1 className="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">
               Appointment:
             </h1>
-            <table className="bg-secondary-green w-full my-2 text-black">
-              <thead className="font-bold text-center text-lg sm:text-xl md:text-2xl lg:texl-3xl">
+            <table className="w-full my-2 text-black bg-secondary-green">
+              <thead className="text-lg font-bold text-center sm:text-xl md:text-2xl lg:texl-3xl">
                 <tr>
                   <td className="border-[1px] border-solid border-black">
                     Date
@@ -107,7 +107,7 @@ const Booking = () => {
             </table>
           </div>
           <button
-            className="bg-secondary-green p-4 rounded-xl text-xl sm:text-2xl md:text-3xl lg:texl-4xl"
+            className="p-4 text-xl bg-secondary-green rounded-xl sm:text-2xl md:text-3xl lg:texl-4xl"
             onClick={() => {
               alert("Appointment booked with");
             }}
