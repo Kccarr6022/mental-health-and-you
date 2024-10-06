@@ -25,7 +25,7 @@ export default function Blog(props) {
           <hr className="border-2 md:border-4 lg:border-8 border-[#5EC7B6] w-[80%] mx-auto" />
           <div className="circle-right w-4 h-4 md:w-8 md:h-8 lg:h-12 lg:w-12 bg-[#5EC7B6] absolute top-1/2 transform -translate-y-1/2 right-[10%] rounded-full"></div>
         </div>
-        <div className="w-4/5 mx-auto p-0 sm:p-8 max-w-[1000px]">
+        <div className="w-4/5 mx-auto p-0 sm:p-8 max-w-[1000px] min-h-[750px]">
           {paginatedPosts.map((blogPost, key) => (
             <article
               className="grid grid-cols-1 pt-6 pb-4 my-4 sm:grid-cols-3 bg-secondary-green-transparent"
@@ -60,25 +60,35 @@ export default function Blog(props) {
             </article>
           ))}
         </div>
-
-        {/* Pagination Controls */}
-        <div className="flex justify-center mt-4">
-          {currentPage > 1 && (
-            <Link href={`/blogs/${currentPage - 1}`}>
-              <a className="px-4 py-2 mr-4 text-white bg-blue-500 rounded">
-                Previous
-              </a>
+        <div className="flex items-center justify-center mt-4 space-x-4 w-[1000px] mx-auto">
+          {currentPage > 1 ? (
+            <Link
+              href={`/blogs/${currentPage - 1}`}
+              className="w-24 px-4 py-2 text-white transition duration-200 rounded bg-secondary-green hover:bg-secondary-green"
+            >
+              Previous
             </Link>
+          ) : (
+            <span className="w-24 px-4 py-2 text-gray-500 bg-transparent rounded cursor-not-allowed">
+              Previous
+            </span>
           )}
-          <span className="text-lg">
+
+          <span className="flex-grow text-lg text-center">
             Page {currentPage} of {totalPages}
           </span>
-          {currentPage < totalPages && (
-            <Link href={`/blogs/${currentPage + 1}`}>
-              <a className="px-4 py-2 ml-4 text-white bg-blue-500 rounded">
-                Next
-              </a>
+
+          {currentPage < totalPages ? (
+            <Link
+              href={`/blogs/${currentPage + 1}`}
+              className="w-24 px-4 py-2 text-white transition duration-200 rounded bg-secondary-green hover:bg-secondary-green"
+            >
+              Next
             </Link>
+          ) : (
+            <span className="w-24 px-4 py-2 text-gray-500 bg-transparent rounded cursor-not-allowed">
+              Next
+            </span>
           )}
         </div>
       </section>
