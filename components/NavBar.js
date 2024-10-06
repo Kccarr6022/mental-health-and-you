@@ -67,7 +67,7 @@ const Navbar = () => {
             <Link href="/booking">Booking</Link>
           </li>
           <li className="p-2 border-2 border-primary-green">
-            <Link href="/blog">Blog</Link>
+            <Link href="/blogs/1">Blog</Link>
           </li>
           <li className="p-2 border-2 border-primary-green">
             <Link href="/about">About</Link>
@@ -119,7 +119,7 @@ const Navbar = () => {
             <Link href="/booking">Booking</Link>
           </li>
           <li className="transition-all duration-300 hover:text-shadow-glow">
-            <Link href="/blog">Blog</Link>
+            <Link href="/blogs/1">Blog</Link>
           </li>
           <li className="transition-all duration-300 hover:text-shadow-glow">
             <Link href="/about">About</Link>
